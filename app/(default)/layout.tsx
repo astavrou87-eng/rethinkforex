@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import type { ReactNode } from "react";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -8,11 +9,7 @@ import "aos/dist/aos.css";
 import Header from "@/components/ui/header";
 import Footer from "@/components/ui/footer";
 
-export default function DefaultLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function DefaultLayout({ children }: { children: ReactNode }) {
   useEffect(() => {
     AOS.init({
       once: true,
@@ -20,15 +17,13 @@ export default function DefaultLayout({
       duration: 700,
       easing: "ease-out-cubic",
     });
-  });
+  }, []);
 
   return (
-  <>
-    {/* <Header /> */}
-
-    <main className="grow">{children}</main>
-
-    <Footer border={true} />
-  </>
-);
-
+    <>
+      <Header />
+      <main className="grow">{children}</main>
+      <Footer border={true} />
+    </>
+  );
+}
