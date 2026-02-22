@@ -28,7 +28,7 @@ export default function HeroHome() {
           {/* CTA */}
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
-              href="https://www.paypal.com/ncp/payment/DYTH8J6KAL596"
+              href="https://sandbox.paypal.com/ncp/payment/P6MXW6G5RSNBQ"
               className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-semibold text-white shadow-sm transition hover:bg-blue-500"
             >
               Buy the PDF – £25
