@@ -22,7 +22,7 @@ export default function HeroHome() {
 
           {/* Subheading */}
           <p className="mx-auto mt-5 max-w-2xl text-lg text-gray-600 md:text-xl">
-            A practical PDF guide designed to help retail traders understand why they keep getting trapped, stopped out, and left behind — and what to look at instead.
+            A practical PDF guide designed to help you realise the real reason you always feel ‘behind’ other traders (and why it was baked in from day one).
           </p>
 
           {/* CTA */}
