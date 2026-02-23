@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -22,17 +24,27 @@ export default function HeroHome() {
 
           {/* Subheading */}
           <p className="mx-auto mt-5 max-w-2xl text-lg text-gray-600 md:text-xl">
-            A practical PDF guide designed to help you realise the real reason you always feel ‘behind’ other traders (and why it was baked in from day one).
+            A practical PDF guide designed to help you realise the real reason
+            you always feel ‘behind’ other traders (and why it was baked in from
+            day one).
           </p>
 
           {/* CTA */}
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
               href="https://www.paypal.com/ncp/payment/DYTH8J6KAL596"
+              onClick={() => {
+                // Fire Meta Pixel event if available
+                if (typeof window !== "undefined" && (window as any).fbq) {
+                  (window as any).fbq("track", "InitiateCheckout", {
+                    value: 25.0,
+                    currency: "GBP",
+                  });
+                }
+              }}
               className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-semibold text-white shadow-sm transition hover:bg-blue-500"
             >
               Buy the PDF – £25
-
             </a>
 
             <Link
