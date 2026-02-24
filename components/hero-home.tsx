@@ -3,7 +3,33 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const META_PIXEL_ID = "1275760744466090";
+
 export default function HeroHome() {
+  const paypalUrl = "https://www.paypal.com/ncp/payment/DYTH8J6KAL596";
+
+  const handleBuyClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // Hold navigation briefly so the pixel event actually sends
+    e.preventDefault();
+
+    try {
+      if (typeof window !== "undefined" && (window as any).fbq) {
+        // Fire on the specific pixel (helps if other pixels ever exist on the account)
+        (window as any).fbq("trackSingle", META_PIXEL_ID, "InitiateCheckout", {
+          value: 25.0,
+          currency: "GBP",
+        });
+      }
+    } catch {
+      // do nothing (we still want to continue to PayPal)
+    }
+
+    // Navigate to PayPal after a tiny delay so the event has time to transmit
+    setTimeout(() => {
+      window.location.href = paypalUrl;
+    }, 250);
+  };
+
   return (
     <section className="relative overflow-hidden">
       {/* Background */}
@@ -32,16 +58,8 @@ export default function HeroHome() {
           {/* CTA */}
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
-              href="https://www.paypal.com/ncp/payment/DYTH8J6KAL596"
-              onClick={() => {
-                // Fire Meta Pixel event if available
-                if (typeof window !== "undefined" && (window as any).fbq) {
-                  (window as any).fbq("track", "InitiateCheckout", {
-                    value: 25.0,
-                    currency: "GBP",
-                  });
-                }
-              }}
+              href={paypalUrl}
+              onClick={handleBuyClick}
               className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-semibold text-white shadow-sm transition hover:bg-blue-500"
             >
               Buy the PDF – £25
