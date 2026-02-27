@@ -88,6 +88,132 @@ export default function HeroHome() {
             <p className="mt-3 text-xs text-gray-500">
               Educational content only. Trading involves risk. No guarantees.
             </p>
+
+            {/* Bridge Section (NEW) */}
+            <div className="mx-auto mt-8 max-w-4xl">
+              <div className="rounded-2xl border border-gray-200 bg-white p-6 text-left shadow-sm">
+                <div className="grid gap-6 md:grid-cols-2">
+                  {/* Left: bullets */}
+                  <div>
+                    <h2 className="text-lg font-semibold text-gray-900">
+                      In the PDF, you’ll learn:
+                    </h2>
+                    <ul className="mt-4 space-y-3 text-sm text-gray-700">
+                      <li className="flex gap-3">
+                        <span className="mt-1 inline-block h-2 w-2 flex-shrink-0 rounded-full bg-blue-600" />
+                        <span>
+                          Why most retail traders feel “late” — and how
+                          institutions create that feeling on purpose.
+                        </span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="mt-1 inline-block h-2 w-2 flex-shrink-0 rounded-full bg-blue-600" />
+                        <span>
+                          How to read price like an execution game (not an
+                          indicator game) — so moves start making sense.
+                        </span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="mt-1 inline-block h-2 w-2 flex-shrink-0 rounded-full bg-blue-600" />
+                        <span>
+                          A simple framework to stop “chasing” and start waiting
+                          for the same kinds of areas institutions care about.
+                        </span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="mt-1 inline-block h-2 w-2 flex-shrink-0 rounded-full bg-blue-600" />
+                        <span>
+                          What to focus on (and what to ignore) so you’re not
+                          reacting after the damage is already done.
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Right: what you get */}
+                  <div>
+                    <h2 className="text-lg font-semibold text-gray-900">
+                      What you get
+                    </h2>
+
+                    <div className="mt-4 grid grid-cols-2 gap-3">
+                      <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
+                        <p className="text-xs font-medium text-gray-500">
+                          Format
+                        </p>
+                        <p className="mt-1 text-sm font-semibold text-gray-900">
+                          PDF guide
+                        </p>
+                      </div>
+                      <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
+                        <p className="text-xs font-medium text-gray-500">
+                          Delivery
+                        </p>
+                        <p className="mt-1 text-sm font-semibold text-gray-900">
+                          Email confirmation
+                        </p>
+                      </div>
+                      <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
+                        <p className="text-xs font-medium text-gray-500">
+                          Includes
+                        </p>
+                        <p className="mt-1 text-sm font-semibold text-gray-900">
+                          Examples &amp; breakdowns
+                        </p>
+                      </div>
+                      <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
+                        <p className="text-xs font-medium text-gray-500">
+                          Goal
+                        </p>
+                        <p className="mt-1 text-sm font-semibold text-gray-900">
+                          Clarity &amp; structure
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="mt-5 rounded-xl border border-blue-100 bg-blue-50 p-4">
+                      <p className="text-sm text-blue-900">
+                        <span className="font-semibold">
+                          You won’t be “sold a system.”
+                        </span>{" "}
+                        This is a clear model for why price moves the way it
+                        does—so you stop feeling like the problem.
+                      </p>
+                    </div>
+
+                    {/* Secondary CTA */}
+                    <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center">
+                      <a
+                        href={paypalUrl}
+                        onClick={handleBuyClick}
+                        className="inline-flex w-full items-center justify-center rounded-xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-500 sm:w-auto"
+                      >
+                        Buy the PDF – £25
+                      </a>
+
+                      <Link
+                        href="/risk-disclaimer"
+                        className="inline-flex w-full items-center justify-center rounded-xl border border-gray-300 bg-white px-6 py-3 text-sm font-semibold text-gray-900 shadow-sm transition hover:bg-gray-50 sm:w-auto"
+                      >
+                        Read the risk disclaimer
+                      </Link>
+                    </div>
+
+                    <p className="mt-3 text-xs text-gray-500">
+                      If you don’t receive it shortly, email{" "}
+                      <a
+                        href="mailto:support@rethinkforex.co.uk"
+                        className="underline decoration-gray-300 underline-offset-2 hover:decoration-gray-500"
+                      >
+                        support@rethinkforex.co.uk
+                      </a>
+                      .
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* End Bridge Section */}
           </div>
         </div>
       </div>
