@@ -45,14 +45,12 @@ export default function HeroHome() {
         <div className="pt-28 pb-12 text-center md:pt-36 md:pb-16">
           {/* Headline */}
           <h1 className="text-4xl font-bold tracking-tight md:text-6xl">
-            Rethink Forex: Trade Like The Large Institutions
+            If You’ve Ever Lied About How Trading Is Going — This Explains Why
           </h1>
 
           {/* Subheading */}
           <p className="mx-auto mt-5 max-w-2xl text-lg text-gray-600 md:text-xl">
-            A practical PDF guide designed to help you realise the real reason
-            you always feel ‘behind’ other traders (and why it was baked in from
-            day one).
+            You’re not behind. You were trained to focus on the wrong things.
           </p>
 
           {/* CTA */}
