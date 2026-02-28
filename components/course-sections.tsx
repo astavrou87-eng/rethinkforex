@@ -128,7 +128,7 @@ export default function CourseSections() {
       href="https://www.paypal.com/ncp/payment/DYTH8J6KAL596"
       className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-semibold text-white shadow-sm transition hover:bg-blue-500"
     >
-      Buy the PDF – £25
+      First 100 copies – £10
 
     </a>
 
@@ -186,7 +186,7 @@ export default function CourseSections() {
       href="https://www.paypal.com/ncp/payment/DYTH8J6KAL596"
       className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-12 py-5 text-lg font-semibold text-white shadow-sm transition hover:bg-blue-500"
     >
-      Buy the PDF – £25
+      First 100 copies – £10
     </a>
 
     <a

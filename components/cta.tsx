@@ -20,7 +20,7 @@ export default function Cta() {
                 href="https://www.paypal.com/ncp/payment/DYTH8J6KAL596"
                 className="inline-flex items-center justify-center rounded-xl bg-white px-12 py-5 text-lg font-semibold text-blue-700 shadow-sm transition hover:bg-blue-50"
               >
-                Buy the PDF – £25
+                First 100 copies – £10
               </a>
 
               <Link
