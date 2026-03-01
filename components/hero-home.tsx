@@ -3,218 +3,149 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const META_PIXEL_ID = "1275760744466090";
-
 export default function HeroHome() {
-  const paypalUrl = "https://www.paypal.com/ncp/payment/DYTH8J6KAL596";
+  const stripeUrl = "https://buy.stripe.com/28EfZg0WM6fi3ZTbMrdjO00";
 
-  const handleBuyClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    // Hold navigation briefly so the pixel event actually sends
+  const handleStripeClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
 
     try {
-      if (typeof window !== "undefined" && (window as any).fbq) {
-        // Fire on the specific pixel (helps if other pixels ever exist on the account)
-        (window as any).fbq("trackSingle", META_PIXEL_ID, "InitiateCheckout", {
-          value: 25.0,
-          currency: "GBP",
-        });
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const w = window as any;
+      if (typeof w.fbq === "function") {
+        w.fbq("track", "InitiateCheckout", { value: 25.0, currency: "GBP" });
       }
     } catch {
-      // do nothing (we still want to continue to PayPal)
+      // no-op
     }
 
-    // Navigate to PayPal after a tiny delay so the event has time to transmit
     setTimeout(() => {
-      window.location.href = paypalUrl;
-    }, 250);
+      window.location.href = stripeUrl;
+    }, 150);
   };
 
   return (
     <section className="relative overflow-hidden">
-      {/* Background */}
+      {/* Darker Background (more emotional punch) */}
       <div
         className="pointer-events-none absolute inset-0 -z-10"
         aria-hidden="true"
       >
-        <div className="absolute left-1/2 top-0 h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl" />
-        <div className="absolute left-1/2 top-24 h-[520px] w-[900px] -translate-x-1/2 rounded-3xl bg-gradient-to-b from-slate-100 to-white" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950" />
+        <div className="absolute left-1/2 top-[-140px] h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-blue-500/15 blur-3xl" />
+        {/* IMPORTANT: fade to dark (not white) to prevent the weird white strip */}
+        <div className="absolute inset-x-0 bottom-[-1px] h-20 bg-gradient-to-t from-slate-950 to-transparent" />
       </div>
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="pt-28 pb-12 text-center md:pt-36 md:pb-16">
+        <div className="pt-20 pb-10 text-center md:pt-28 md:pb-14">
+          {/* Trust bar */}
+          <div className="mx-auto mt-2 flex max-w-4xl flex-wrap items-center justify-center gap-3 text-sm text-white/85">
+            <div className="rounded-xl border border-white/15 bg-white/5 px-4 py-2 shadow-sm backdrop-blur">
+              <span className="font-extrabold text-white">5★</span>{" "}
+              consistently rated by previous buyers
+            </div>
+            <div className="rounded-xl border border-white/15 bg-white/5 px-4 py-2 shadow-sm backdrop-blur">
+              <span className="font-extrabold text-white">Instant</span> PDF
+              access after checkout
+            </div>
+            <div className="rounded-xl border border-white/15 bg-white/5 px-4 py-2 shadow-sm backdrop-blur">
+              <span className="font-extrabold text-white">No indicators.</span>{" "}
+              Context-first framework
+            </div>
+          </div>
+
+          {/* Pre-head */}
+          <p className="mx-auto mt-8 max-w-3xl text-base font-semibold text-white/80 md:text-lg">
+            The most embarrassing part isn’t losing money.
+          </p>
+
           {/* Headline */}
-          <h1 className="text-4xl font-bold tracking-tight md:text-6xl">
-            If You’ve Ever Lied About How Trading Is Going — This Explains Why
+          <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-white md:text-7xl">
+            It’s realising you were taught to play the{" "}
+            <span className="relative inline-block font-black">
+              <span className="relative z-10">wrong</span>
+              <span className="absolute inset-x-0 -bottom-1 z-0 h-3 rounded bg-yellow-400/80" />
+            </span>{" "}
+            game.
           </h1>
 
-          {/* Subheading */}
-          <p className="mx-auto mt-5 max-w-2xl text-lg text-gray-600 md:text-xl">
-            You’re not behind. You were trained to focus on the wrong things.
+          {/* Subhead */}
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-white/85 md:text-xl">
+            You’re not inconsistent because you lack discipline.{" "}
+            <span className="font-extrabold text-white">
+              You were trained to read price in a retail way that makes you late
+              by default — entering where professionals are already finished.
+            </span>
           </p>
+
+          {/* Mechanism card */}
+          <div className="mx-auto mt-8 max-w-3xl rounded-2xl border border-white/15 bg-white/5 p-6 text-left shadow-sm backdrop-blur">
+            <p className="text-sm font-extrabold text-white">
+              What changes when you read price correctly:
+            </p>
+
+            <ul className="mt-4 space-y-3 text-base text-white/85">
+              <li className="flex gap-3">
+                <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-400" />
+                <span>
+                  You stop treating the chart like a “setup hunt” and start
+                  seeing <span className="font-semibold text-white">context</span>{" "}
+                  first.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-400" />
+                <span>
+                  “Stopped out then it runs” becomes predictable — because you’ll
+                  finally understand{" "}
+                  <span className="font-semibold text-white">
+                    where retail gets trapped
+                  </span>
+                  .
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-400" />
+                <span>
+                  Your psychology stabilises as a side-effect — because the market
+                  stops feeling random.
+                </span>
+              </li>
+            </ul>
+
+            <div className="mt-5 rounded-xl border border-yellow-400/25 bg-yellow-400/10 p-4">
+              <p className="text-sm text-white/90">
+                <span className="font-extrabold text-white">
+                  Responsibility without self-blame:
+                </span>{" "}
+                you’re accountable — but you don’t need to hate yourself to
+                improve.
+              </p>
+            </div>
+          </div>
 
           {/* CTA */}
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
-              href={paypalUrl}
-              onClick={handleBuyClick}
-              className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-semibold text-white shadow-sm transition hover:bg-blue-500"
+              href={stripeUrl}
+              onClick={handleStripeClick}
+              className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-10 py-4 text-base font-extrabold text-white shadow-sm transition hover:bg-blue-500"
             >
-              First 100 copies – £10
+              Get the PDF — £25
             </a>
 
             <Link
               href="/risk-disclaimer"
-              className="inline-flex items-center justify-center rounded-xl border border-gray-300 bg-white px-8 py-4 text-base font-semibold text-gray-900 shadow-sm transition hover:bg-gray-50"
+              className="text-sm font-semibold text-white/85 underline decoration-white/30 underline-offset-4 hover:decoration-white/60"
             >
-              Risk Disclaimer
+              Risk disclaimer
             </Link>
           </div>
 
-          {/* Image */}
-          <div className="mx-auto mt-10 max-w-4xl">
-            <div className="rounded-2xl border border-gray-200 bg-white p-3 shadow-sm">
-              <div className="relative aspect-[16/9] overflow-hidden rounded-xl bg-gray-100">
-                <Image
-                  src="/images/orders-fx.png"
-                  alt="Rethink Forex example"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </div>
-            </div>
-
-            <p className="mt-3 text-xs text-gray-500">
-              Educational content only. Trading involves risk. No guarantees.
-            </p>
-
-            {/* Bridge Section (NEW) */}
-            <div className="mx-auto mt-8 max-w-4xl">
-              <div className="rounded-2xl border border-gray-200 bg-white p-6 text-left shadow-sm">
-                <div className="grid gap-6 md:grid-cols-2">
-                  {/* Left: bullets */}
-                  <div>
-                    <h2 className="text-lg font-semibold text-gray-900">
-                      In the PDF, you’ll learn:
-                    </h2>
-                    <ul className="mt-4 space-y-3 text-sm text-gray-700">
-                      <li className="flex gap-3">
-                        <span className="mt-1 inline-block h-2 w-2 flex-shrink-0 rounded-full bg-blue-600" />
-                        <span>
-                          Why most retail traders feel “late” — and how
-                          institutions create that feeling on purpose.
-                        </span>
-                      </li>
-                      <li className="flex gap-3">
-                        <span className="mt-1 inline-block h-2 w-2 flex-shrink-0 rounded-full bg-blue-600" />
-                        <span>
-                          How to read price like an execution game (not an
-                          indicator game) — so moves start making sense.
-                        </span>
-                      </li>
-                      <li className="flex gap-3">
-                        <span className="mt-1 inline-block h-2 w-2 flex-shrink-0 rounded-full bg-blue-600" />
-                        <span>
-                          A simple framework to stop “chasing” and start waiting
-                          for the same kinds of areas institutions care about.
-                        </span>
-                      </li>
-                      <li className="flex gap-3">
-                        <span className="mt-1 inline-block h-2 w-2 flex-shrink-0 rounded-full bg-blue-600" />
-                        <span>
-                          What to focus on (and what to ignore) so you’re not
-                          reacting after the damage is already done.
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  {/* Right: what you get */}
-                  <div>
-                    <h2 className="text-lg font-semibold text-gray-900">
-                      What you get
-                    </h2>
-
-                    <div className="mt-4 grid grid-cols-2 gap-3">
-                      <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
-                        <p className="text-xs font-medium text-gray-500">
-                          Format
-                        </p>
-                        <p className="mt-1 text-sm font-semibold text-gray-900">
-                          PDF guide
-                        </p>
-                      </div>
-                      <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
-                        <p className="text-xs font-medium text-gray-500">
-                          Delivery
-                        </p>
-                        <p className="mt-1 text-sm font-semibold text-gray-900">
-                          Email confirmation
-                        </p>
-                      </div>
-                      <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
-                        <p className="text-xs font-medium text-gray-500">
-                          Includes
-                        </p>
-                        <p className="mt-1 text-sm font-semibold text-gray-900">
-                          Examples &amp; breakdowns
-                        </p>
-                      </div>
-                      <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
-                        <p className="text-xs font-medium text-gray-500">
-                          Goal
-                        </p>
-                        <p className="mt-1 text-sm font-semibold text-gray-900">
-                          Clarity &amp; structure
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="mt-5 rounded-xl border border-blue-100 bg-blue-50 p-4">
-                      <p className="text-sm text-blue-900">
-                        <span className="font-semibold">
-                          You won’t be “sold a system.”
-                        </span>{" "}
-                        This is a clear model for why price moves the way it
-                        does—so you stop feeling like the problem.
-                      </p>
-                    </div>
-
-                    {/* Secondary CTA */}
-                    <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center">
-                      <a
-                        href={paypalUrl}
-                        onClick={handleBuyClick}
-                        className="inline-flex w-full items-center justify-center rounded-xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-500 sm:w-auto"
-                      >
-                        First 100 copies – £10
-                      </a>
-
-                      <Link
-                        href="/risk-disclaimer"
-                        className="inline-flex w-full items-center justify-center rounded-xl border border-gray-300 bg-white px-6 py-3 text-sm font-semibold text-gray-900 shadow-sm transition hover:bg-gray-50 sm:w-auto"
-                      >
-                        Read the risk disclaimer
-                      </Link>
-                    </div>
-
-                    <p className="mt-3 text-xs text-gray-500">
-                      If you don’t receive it shortly, email{" "}
-                      <a
-                        href="mailto:support@rethinkforex.co.uk"
-                        className="underline decoration-gray-300 underline-offset-2 hover:decoration-gray-500"
-                      >
-                        support@rethinkforex.co.uk
-                      </a>
-                      .
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* End Bridge Section */}
-          </div>
+          <p className="mt-3 text-xs text-white/70">
+            Educational content only. Trading involves risk. No guarantees.
+          </p>
         </div>
       </div>
     </section>
