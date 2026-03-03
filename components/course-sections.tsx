@@ -2,9 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function CourseSections() {
   const stripeUrl = "https://buy.stripe.com/28EfZg0WM6fi3ZTbMrdjO00";
+
+  const [zoomSrc, setZoomSrc] = useState<string | null>(null);
+  const [zoomAlt, setZoomAlt] = useState<string>("");
 
   const handleCheckoutClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -23,6 +27,51 @@ export default function CourseSections() {
       window.location.href = stripeUrl;
     }, 150);
   };
+
+  const openZoom = (src: string, alt: string) => {
+    setZoomSrc(src);
+    setZoomAlt(alt);
+  };
+
+  const closeZoom = () => {
+    setZoomSrc(null);
+    setZoomAlt("");
+  };
+
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeZoom();
+    };
+
+    if (zoomSrc) {
+      document.addEventListener("keydown", onKeyDown);
+      // Prevent background scroll when modal open
+      document.body.style.overflow = "hidden";
+    }
+
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [zoomSrc]);
+
+  const previews = [
+    {
+      src: "/images/previews/p14.png",
+      alt: "Preview page 14 — institutional context framework (partial preview)",
+      label: "Preview page 14",
+    },
+    {
+      src: "/images/previews/p26.png",
+      alt: "Preview page 26 — profit-taking / structure shift example (partial preview)",
+      label: "Preview page 26",
+    },
+    {
+      src: "/images/previews/p34.png",
+      alt: "Preview page 34 — how to apply zones and returns (partial preview)",
+      label: "Preview page 34",
+    },
+  ];
 
   return (
     <section className="relative bg-white">
@@ -119,19 +168,42 @@ export default function CourseSections() {
               </p>
             </div>
 
-            {/* Image */}
+            {/* PDF Preview Thumbnails */}
             <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-slate-100">
-                <Image
-                  src="/images/1000-pips.png"
-                  alt="Example institutional zone and structure breakdown"
-                  fill
-                  className="object-contain"
-                />
+              <p className="text-sm font-semibold text-slate-900">
+                Preview pages (partial)
+              </p>
+              <p className="mt-2 text-sm text-slate-600">
+                Click to zoom. Previews are partial / watermarked so you can see the style without giving away the full method.
+              </p>
+
+              <div className="mt-5 grid gap-4 md:grid-cols-3">
+                {previews.map((p) => (
+                  <button
+                    key={p.src}
+                    type="button"
+                    onClick={() => openZoom(p.src, p.alt)}
+                    className="group rounded-xl border border-slate-200 bg-white p-2 text-left shadow-sm transition hover:shadow-md"
+                    aria-label={`Zoom ${p.label}`}
+                  >
+                    <div className="relative aspect-[3/4] w-full overflow-hidden rounded-lg bg-slate-100">
+                      <Image
+                        src={p.src}
+                        alt={p.alt}
+                        fill
+                        className="object-cover transition group-hover:scale-[1.02]"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                    </div>
+                    <p className="mt-2 text-xs font-semibold text-slate-700">
+                      {p.label}
+                    </p>
+                  </button>
+                ))}
               </div>
 
-              <p className="mt-3 text-sm text-slate-500">
-                Example chart breakdown style inside the PDF (educational only).
+              <p className="mt-3 text-xs text-slate-500">
+                Educational content only. Trading involves risk. No guarantees.
               </p>
             </div>
           </div>
@@ -407,6 +479,53 @@ export default function CourseSections() {
           </div>
         </div>
       </div>
+
+      {/* Zoom Modal */}
+      {zoomSrc && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Preview zoom"
+          onClick={closeZoom}
+        >
+          <div
+            className="relative w-full max-w-4xl overflow-hidden rounded-2xl bg-white shadow-xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between border-b border-slate-200 px-4 py-3">
+              <p className="text-sm font-semibold text-slate-900">
+                Preview (partial / watermarked)
+              </p>
+              <button
+                type="button"
+                onClick={closeZoom}
+                className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm font-semibold text-slate-700 hover:bg-slate-50"
+                aria-label="Close preview"
+              >
+                Close
+              </button>
+            </div>
+
+            <div className="relative aspect-[4/3] w-full bg-slate-100">
+              <Image
+                src={zoomSrc}
+                alt={zoomAlt}
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 100vw, 1024px"
+                priority
+              />
+            </div>
+
+            <div className="px-4 py-3">
+              <p className="text-xs text-slate-500">
+                Educational content only. Trading involves risk. No guarantees.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
