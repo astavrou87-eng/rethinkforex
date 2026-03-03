@@ -28,7 +28,9 @@ export default function CourseSections() {
     <section className="relative bg-white">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="py-16 md:py-24">
-          {/* Section: What you'll get */}
+          {/* =========================
+              WHAT YOU’LL GET (LIGHT)
+             ========================= */}
           <div className="grid gap-10 md:grid-cols-2 md:items-center">
             <div>
               <h2 className="text-3xl font-bold tracking-tight text-slate-900">
@@ -36,10 +38,13 @@ export default function CourseSections() {
               </h2>
 
               <p className="mt-4 text-slate-600">
-                This isn’t “bank secrets” or indicators. It’s a clear way to read price as a{" "}
-                <span className="font-semibold text-slate-900">liquidity and positioning game</span>
-                — so you stop reacting late and start understanding what price is doing{" "}
-                <span className="font-semibold text-slate-900">before</span> you enter.
+                This isn’t “bank secrets” or signals. It’s a clear way to read price as a{" "}
+                <span className="font-semibold text-slate-900">
+                  liquidity and positioning game
+                </span>
+                — so you stop reacting at the end of the move and start understanding{" "}
+                <span className="font-semibold text-slate-900">why</span> price is behaving the
+                way it is.
               </p>
 
               <ul className="mt-6 space-y-3 text-slate-700">
@@ -50,18 +55,18 @@ export default function CourseSections() {
                     <span className="font-semibold text-slate-900">
                       likely institutional interest zones
                     </span>{" "}
-                    (where price tends to pause, trap, and reverse).
+                    (where price tends to originate, pause, trap, and reverse).
                   </span>
                 </li>
 
                 <li className="flex gap-3">
                   <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-600" />
                   <span>
-                    Why moves often start by{" "}
+                    Why moves often begin by{" "}
                     <span className="font-semibold text-slate-900">
-                      taking retail liquidity first
+                      consuming retail liquidity
                     </span>{" "}
-                    (the “stopped out then it runs” problem).
+                    first (the classic “stopped out then it runs” sequence).
                   </span>
                 </li>
 
@@ -69,21 +74,19 @@ export default function CourseSections() {
                   <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-600" />
                   <span>
                     How to spot{" "}
-                    <span className="font-semibold text-slate-900">
-                      structure shifts
-                    </span>{" "}
-                    that signal distribution / profit-taking behavior.
+                    <span className="font-semibold text-slate-900">structure shifts</span>{" "}
+                    that signal distribution / profit-taking behaviour.
                   </span>
                 </li>
 
                 <li className="flex gap-3">
                   <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-600" />
                   <span>
-                    A simple framework to stop “chasing” and start waiting for{" "}
+                    A simple framework to stop chasing and start waiting for{" "}
                     <span className="font-semibold text-slate-900">
-                      higher-quality context
+                      high-quality context
                     </span>{" "}
-                    like a professional.
+                    (zones + behaviour), like professionals do.
                   </span>
                 </li>
               </ul>
@@ -121,60 +124,115 @@ export default function CourseSections() {
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-slate-100">
                 <Image
                   src="/images/1000-pips.png"
-                  alt="Rethink Forex example"
+                  alt="Example institutional zone and structure breakdown"
                   fill
                   className="object-contain"
                 />
               </div>
 
               <p className="mt-3 text-sm text-slate-500">
-                Example chart breakdowns inside the PDF (educational only).
+                Example chart breakdown style inside the PDF (educational only).
               </p>
             </div>
           </div>
 
-          {/* Section: Who it's for */}
+          {/* =========================
+              WHY CHOOSE US (ECOM-STYLE DIFFERENTIATION)
+             ========================= */}
+          <div className="mt-16 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+            <h3 className="text-2xl font-bold text-slate-900">
+              Why Rethink Forex works when other courses didn’t
+            </h3>
+            <p className="mt-3 text-slate-600">
+              Most retail education trains you to react to price. Institutions move size — they
+              need liquidity to enter, exit, and take profits. This PDF teaches you to read the
+              market through that constraint.
+            </p>
+
+            <div className="mt-6 grid gap-6 md:grid-cols-2">
+              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+                <p className="font-semibold text-slate-900">Typical trading education</p>
+                <ul className="mt-3 space-y-2 text-slate-700">
+                  <li>• “Here’s an indicator / pattern”</li>
+                  <li>• “Find a perfect entry”</li>
+                  <li>• “Take more trades / be more disciplined”</li>
+                  <li>• Strategy-hopping without a consistent model of price</li>
+                </ul>
+              </div>
+
+              <div className="rounded-2xl border border-blue-200 bg-blue-50 p-6">
+                <p className="font-semibold text-blue-950">Rethink Forex</p>
+                <ul className="mt-3 space-y-2 text-blue-900">
+                  <li>• Shows where liquidity is required (and where it appears)</li>
+                  <li>• Explains staged position building (often largest first)</li>
+                  <li>• Teaches structure shifts as profit-taking / distribution clues</li>
+                  <li>• Gives you a repeatable context lens across pairs/timeframes</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <a
+                href={stripeUrl}
+                onClick={handleCheckoutClick}
+                className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-extrabold text-white shadow-sm transition hover:bg-blue-500"
+              >
+                Get the PDF — £25
+              </a>
+              <p className="text-sm text-slate-600">
+                One-time purchase. Instant download.
+              </p>
+            </div>
+          </div>
+
+          {/* =========================
+              WHO IT’S FOR
+             ========================= */}
           <div className="mt-16 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
             <h3 className="text-xl font-bold text-slate-900">Who this is for</h3>
 
             <div className="mt-6 grid gap-6 md:grid-cols-2">
               <div>
-                <p className="font-semibold text-slate-900">✅ You’ll love this if:</p>
+                <p className="font-semibold text-slate-900">✅ You’ll like this if:</p>
                 <ul className="mt-3 space-y-2 text-slate-700">
-                  <li>• You’re tired of being right on direction and still losing because context is off</li>
-                  <li>• You’re done with indicators, signals, and strategy-hopping</li>
-                  <li>• You want fewer forced trades and less “why did I do that?” behaviour</li>
-                  <li>• You want structure and understanding — not hype, not shortcuts</li>
+                  <li>• You’re tired of being “right” on direction but wrong on timing</li>
+                  <li>• You want to understand what price is doing before you enter</li>
+                  <li>• You’re done with signal-dependence and indicator noise</li>
+                  <li>• You want a model you can apply across pairs/timeframes</li>
                 </ul>
               </div>
 
               <div>
                 <p className="font-semibold text-slate-900">❌ Not for you if:</p>
                 <ul className="mt-3 space-y-2 text-slate-700">
-                  <li>• You want guaranteed profits or a magic setup</li>
-                  <li>• You want buy/sell signals instead of learning to read price</li>
-                  <li>• You’re not willing to change how you interpret the chart</li>
-                  <li>• You’re looking for entertainment instead of a framework</li>
+                  <li>• You want guaranteed profits or a “magic setup”</li>
+                  <li>• You want buy/sell signals instead of learning to read context</li>
+                  <li>• You’re not willing to adjust how you interpret structure</li>
+                  <li>• You’re looking for entertainment, not a practical framework</li>
                 </ul>
               </div>
             </div>
           </div>
 
-          {/* Section: Guarantee / Risk reversal */}
+          {/* =========================
+              GUARANTEE / RISK REVERSAL
+             ========================= */}
           <div className="mt-10 rounded-2xl border border-blue-100 bg-blue-50 p-8 shadow-sm">
             <h3 className="text-xl font-bold text-blue-950">
-              Make-it-right guarantee (simple)
+              Simple make-it-right guarantee
             </h3>
             <p className="mt-3 text-blue-900">
-              If you read the PDF and it doesn’t change how you interpret price,
-              email support. We’ll make it right. No drama.
+              If you read the PDF and you don’t get at least one clear “that explains it” moment,
+              email support and we’ll make it right. No back-and-forth.
             </p>
             <p className="mt-2 text-xs text-blue-900/80">
-              This is educational content — no profit guarantees, no trading advice.
+              Educational content — no profit guarantees, no trading advice.
             </p>
           </div>
 
-          {/* Testimonials */}
+          {/* =========================
+              TESTIMONIALS (STRUCTURE-FOCUSED)
+             ========================= */}
           <div className="mt-16">
             <h3 className="text-2xl font-bold text-slate-900">What traders are saying</h3>
             <p className="mt-2 text-slate-600">
@@ -185,30 +243,33 @@ export default function CourseSections() {
               {[
                 {
                   quote:
-                    "Trading used to drain me. Every session felt like a fight. The change was stopping the guessing and seeing the market as context first. I take fewer trades now — but they make sense.",
+                    "The biggest shift was understanding why price returns to specific areas. Once I started marking zones and waiting for the return, my entries stopped feeling like guesses.",
                   name: "James R.",
                   title: "Retail Forex Trader",
                 },
                 {
                   quote:
-                    "I thought I just wasn’t cut out for trading. This didn’t give me a ‘system’ — it gave me clarity. I stopped taking every loss personally and started seeing what I was missing.",
+                    "I finally understood what ‘liquidity’ means in practical terms. Breakout failures started making sense, and I stopped treating every move as random.",
                   name: "Andrew M.",
                   title: "Prop-Firm Challenge Trader",
                 },
                 {
                   quote:
-                    "I’d get stopped out and then watch price go exactly where I expected. It was driving me mad. Now I understand why that kept happening — and I’m not reacting blindly anymore.",
+                    "The structure-shift section was the key for me. I can now spot when profit-taking is likely starting instead of holding through a stall and giving it back.",
                   name: "Daniel K.",
                   title: "Swing Trader",
                 },
                 {
                   quote:
-                    "On demo I was fine. With real money I’d force trades. The difference now is I’m looking for context first, not entries. That alone removed a huge amount of stress.",
+                    "Most courses taught me entries. This taught me context. I take fewer trades now because I’m filtering for the areas where institutions actually need orders.",
                   name: "Mark T.",
                   title: "Independent Trader",
                 },
               ].map((t) => (
-                <div key={t.name} className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                <div
+                  key={t.name}
+                  className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
+                >
                   <div className="mb-3 text-yellow-400">★★★★★</div>
                   <p className="text-slate-700">“{t.quote}”</p>
                   <div className="mt-4 font-semibold text-slate-900">{t.name}</div>
@@ -222,14 +283,16 @@ export default function CourseSections() {
             </p>
           </div>
 
-          {/* Mini CTA */}
+          {/* =========================
+              MINI CTA
+             ========================= */}
           <div className="mt-12 rounded-2xl border border-slate-200 bg-slate-900 px-6 py-10 text-center text-white shadow-sm">
             <h3 className="text-2xl font-extrabold md:text-3xl">
-              Stop trading like retail. Start reading price with context.
+              Stop trading outcomes. Start trading context.
             </h3>
             <p className="mx-auto mt-3 max-w-2xl text-slate-200">
-              A practical, no-hype PDF that explains why your losses keep repeating —
-              and how to shift your perspective so trading feels calmer and more structured.
+              A practical, no-hype PDF that explains how institutions need liquidity — and how
+              that shapes traps, reversals, and profit-taking.
             </p>
 
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -254,7 +317,9 @@ export default function CourseSections() {
             </p>
           </div>
 
-          {/* FAQ */}
+          {/* =========================
+              FAQ
+             ========================= */}
           <div className="mt-16">
             <h3 className="text-2xl font-bold text-slate-900">FAQ</h3>
 
@@ -262,28 +327,32 @@ export default function CourseSections() {
               <div className="rounded-xl border border-slate-200 bg-white p-6">
                 <p className="font-semibold text-slate-900">How do I receive the PDF?</p>
                 <p className="mt-2 text-slate-700">
-                  Immediately after checkout. You’ll see confirmation on Stripe and you’ll receive an email receipt. If anything goes wrong, email support and we’ll sort it quickly.
+                  Immediately after checkout. You’ll see confirmation on Stripe and you’ll receive
+                  an email receipt. If anything goes wrong, email support and we’ll sort it quickly.
                 </p>
               </div>
 
               <div className="rounded-xl border border-slate-200 bg-white p-6">
                 <p className="font-semibold text-slate-900">Is this beginner-friendly?</p>
                 <p className="mt-2 text-slate-700">
-                  Yes — it’s written to be clear and practical. If you already trade, it helps simplify your decision-making and tighten your process.
+                  Yes — it’s written to be clear and practical. If you already trade, it helps you
+                  stop guessing and start filtering for context.
                 </p>
               </div>
 
               <div className="rounded-xl border border-slate-200 bg-white p-6">
                 <p className="font-semibold text-slate-900">Do I need indicators?</p>
                 <p className="mt-2 text-slate-700">
-                  No. This is context-first price reading. If you use indicators, you’ll likely rely on them less once you can read structure and liquidity properly.
+                  No. This is structure + liquidity context. If you currently use indicators, you’ll
+                  likely rely on them less once you can read price behaviour properly.
                 </p>
               </div>
 
               <div className="rounded-xl border border-slate-200 bg-white p-6">
                 <p className="font-semibold text-slate-900">Do you guarantee profits?</p>
                 <p className="mt-2 text-slate-700">
-                  No. Trading involves risk. This is educational content designed to improve your interpretation of price and reduce decision chaos — not a promise of returns.
+                  No. Trading involves risk. This is educational content designed to improve your
+                  interpretation of price — not a promise of returns.
                 </p>
               </div>
 
@@ -303,14 +372,16 @@ export default function CourseSections() {
             </div>
           </div>
 
-          {/* Final CTA */}
+          {/* =========================
+              FINAL CTA
+             ========================= */}
           <div className="mt-16 rounded-2xl bg-slate-900 px-8 py-10 text-center text-white">
             <h3 className="text-2xl font-extrabold">
-              Ready to stop repeating the same loss pattern?
+              Ready to start reading price like a liquidity game?
             </h3>
 
             <p className="mx-auto mt-3 max-w-2xl text-white/80">
-              Get the PDF and adopt the context-first lens retail traders are never taught.
+              Get the PDF and use the context-first lens most retail traders never learn.
             </p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">

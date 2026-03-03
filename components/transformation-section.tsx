@@ -26,20 +26,19 @@ export default function TransformationSection() {
 
   return (
     <section className="relative overflow-hidden">
-      {/* Slightly lighter dark than hero, and a clean fade into white below */}
+      {/* Slightly lighter dark than hero, and a clean fade into the section below */}
       <div
         className="pointer-events-none absolute inset-0 -z-10"
         aria-hidden="true"
       >
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950" />
         <div className="absolute left-1/2 top-[-120px] h-[460px] w-[980px] -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl" />
-        {/* Fade to white for the next section (fixes abrupt essay transition) */}
-        <div className="absolute inset-x-0 bottom-[-1px] h-28 bg-gradient-to-t from-white to-transparent" />
+        {/* Fade to dark (not white) so your page stays coherent */}
+        <div className="absolute inset-x-0 bottom-[-1px] h-28 bg-gradient-to-t from-slate-950 to-transparent" />
       </div>
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="py-12 md:py-16">
-          {/* Use 12-col grid so the image doesn't feel “small/floaty” */}
           <div className="grid items-center gap-10 md:grid-cols-12">
             {/* Image */}
             <div className="md:col-span-6">
@@ -47,7 +46,7 @@ export default function TransformationSection() {
                 <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-slate-900">
                   <Image
                     src="/images/trader-reflection.png"
-                    alt="A retail trader reflecting late at night"
+                    alt="A trader analysing price structure on a chart"
                     fill
                     className="object-cover"
                     priority={false}
@@ -55,22 +54,21 @@ export default function TransformationSection() {
                 </div>
               </div>
 
-              {/* Small caption: keep it, but make it feel intentional */}
               <p className="mt-3 text-sm text-white/70">
-                You’re not alone in this — but most people never fix it.
+                The edge isn’t a secret indicator — it’s understanding how size actually moves through price.
               </p>
             </div>
 
             {/* Copy */}
             <div className="md:col-span-6">
               <p className="text-sm font-semibold text-yellow-300/90">
-                Let me show you what this fixes.
+                Here’s the core shift.
               </p>
 
               <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-white md:text-4xl">
-                You weren’t taught to trade like banks.
+                You weren’t taught to trade like institutions.
                 <br className="hidden md:block" />
-                You were taught to chase their leftovers.
+                You were taught to chase the move after it happened.
               </h2>
 
               <p className="mt-5 text-base leading-relaxed text-white/85">
@@ -78,48 +76,46 @@ export default function TransformationSection() {
                 <span className="font-semibold text-white">liquidity</span> —
                 enough opposing orders — to{" "}
                 <span className="font-semibold text-white">
-                  enter, scale, and exit
-                </span>{" "}
-                positions. That’s why price moves the way it does.
+                  enter, scale, take profits, and exit
+                </span>
+                . That constraint shapes price behaviour.
               </p>
 
-              {/* Transformation blocks */}
+              {/* Comparison blocks */}
               <div className="mt-7 grid gap-4">
                 <div className="rounded-2xl border border-white/15 bg-white/5 p-5 backdrop-blur">
                   <p className="text-sm font-extrabold text-white">
-                    What retail is trained to do
+                    What retail is trained to focus on
                   </p>
                   <ul className="mt-3 space-y-2 text-sm text-white/80">
-                    <li>• Focus on entries and “setups” in isolation</li>
-                    <li>• Place stops based on pain, not structure</li>
-                    <li>• Get trapped in the same zones banks use for liquidity</li>
+                    <li>• Entries and “setups” without context</li>
+                    <li>• Breakouts that depend on continuation</li>
+                    <li>• Stops placed by comfort, not structure</li>
+                    <li>• Treating reversals as “random”</li>
                   </ul>
                 </div>
 
                 <div className="rounded-2xl border border-white/15 bg-white/5 p-5 backdrop-blur">
                   <p className="text-sm font-extrabold text-white">
-                    What this PDF teaches you instead
+                    What you’ll be able to do after this PDF
                   </p>
                   <ul className="mt-3 space-y-2 text-sm text-white/80">
-                    <li>• How to spot where institutions likely placed positions</li>
-                    <li>• How they build positions (and why the biggest order comes first)</li>
-                    <li>• How to recognise profit-taking via structure changes</li>
+                    <li>• Mark where large participation likely entered (origin moves + zones)</li>
+                    <li>• Recognise staged position building (and why the biggest order often comes first)</li>
+                    <li>• Spot profit-taking via structure shifts and larger retracements</li>
+                    <li>• Understand why price returns to key levels when liquidity is needed again</li>
                   </ul>
                 </div>
 
                 <div className="rounded-2xl border border-yellow-400/25 bg-yellow-400/10 p-5">
                   <p className="text-sm font-extrabold text-white">The shift</p>
                   <p className="mt-3 text-sm leading-relaxed text-white/90">
-                    From “find a setup” → to{" "}
+                    From <span className="font-semibold text-white">“find a setup”</span> → to{" "}
                     <span className="font-semibold text-white">
-                      follow institutional positioning
+                      reading liquidity and institutional positioning
                     </span>
                     . <br />
-                    From self-blame → to{" "}
-                    <span className="font-semibold text-white">
-                      reading liquidity and intent
-                    </span>
-                    .
+                    From reacting late → to waiting for the areas that actually matter.
                   </p>
                 </div>
               </div>
