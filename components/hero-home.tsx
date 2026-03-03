@@ -36,23 +36,11 @@ export default function HeroHome() {
       </div>
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="pt-20 pb-12 text-center md:pt-28 md:pb-16">
-          {/* Trust Bar */}
-          <div className="mx-auto mt-2 flex max-w-4xl flex-wrap items-center justify-center gap-3 text-sm text-white/85">
-            <div className="rounded-xl border border-white/15 bg-white/5 px-4 py-2 shadow-sm backdrop-blur">
-              <span className="font-extrabold text-white">Instant</span> PDF access
-            </div>
-            <div className="rounded-xl border border-white/15 bg-white/5 px-4 py-2 shadow-sm backdrop-blur">
-              <span className="font-extrabold text-white">No indicators.</span> No signals.
-            </div>
-            <div className="rounded-xl border border-white/15 bg-white/5 px-4 py-2 shadow-sm backdrop-blur">
-              <span className="font-extrabold text-white">£25 one-time</span> payment
-            </div>
-          </div>
-
-          {/* Pre-head */}
-          <p className="mx-auto mt-8 max-w-3xl text-base font-semibold text-white/75 md:text-lg">
-            Most retail traders are trained to enter where institutions are exiting.
+        <div className="pt-16 pb-12 text-center md:pt-24 md:pb-16">
+          {/* Pre-head (tight + direct) */}
+          <p className="mx-auto mt-2 max-w-3xl text-base font-semibold text-white/75 md:text-lg">
+            You were taught to “find entries.” Institutions are forced to find{" "}
+            <span className="text-white">liquidity</span>.
           </p>
 
           {/* Headline */}
@@ -67,50 +55,27 @@ export default function HeroHome() {
             .
           </h1>
 
-          {/* Subhead */}
+          {/* Subhead (mechanism → personal relevance) */}
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-white/85 md:text-xl">
             Large positions require opposing orders. To enter, scale, and take profits,
-            institutions must trade against retail flow.
+            institutions must trade against flow — that constraint is why breakouts fail,
+            stops get{" "}
+            <span className="font-semibold text-white">hit</span>, and price returns to the same
+            zones.
             <span className="font-extrabold text-white">
-              {" "}This PDF shows you how to recognise that process using structure — not indicators.
+              {" "}
+              This PDF shows you how to read that pressure in structure — not indicators.
             </span>
           </p>
 
-          {/* Mechanism Summary Card */}
-          <div className="mx-auto mt-8 max-w-3xl rounded-2xl border border-white/15 bg-white/5 p-6 text-left shadow-sm backdrop-blur">
-            <p className="text-sm font-extrabold text-white">
-              What this teaches you:
-            </p>
-
-            <ul className="mt-4 space-y-3 text-base text-white/85">
-              <li className="flex gap-3">
-                <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-400" />
-                <span>
-                  How institutions build positions in stages (often largest first).
-                </span>
-              </li>
-
-              <li className="flex gap-3">
-                <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-400" />
-                <span>
-                  Why price returns to certain zones when positions aren’t fully built.
-                </span>
-              </li>
-
-              <li className="flex gap-3">
-                <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-400" />
-                <span>
-                  How profit-taking appears through structure shifts and larger retracements.
-                </span>
-              </li>
-
-              <li className="flex gap-3">
-                <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-400" />
-                <span>
-                  Why breakout failures and “stop hunts” are usually liquidity events — not randomness.
-                </span>
-              </li>
-            </ul>
+          {/* Trust/clarity pills (moved BELOW headline/subhead, 2 only) */}
+          <div className="mx-auto mt-6 flex max-w-3xl flex-wrap items-center justify-center gap-3 text-sm text-white/85">
+            <div className="rounded-xl border border-white/15 bg-white/5 px-4 py-2 shadow-sm backdrop-blur">
+              <span className="font-extrabold text-white">Instant</span> PDF access
+            </div>
+            <div className="rounded-xl border border-white/15 bg-white/5 px-4 py-2 shadow-sm backdrop-blur">
+              <span className="font-extrabold text-white">No indicators.</span> No signals.
+            </div>
           </div>
 
           {/* CTA */}
@@ -134,6 +99,40 @@ export default function HeroHome() {
           <p className="mt-3 text-xs text-white/70">
             Educational content only. Trading involves risk. No guarantees.
           </p>
+
+          {/* Mechanism Summary Card (kept, but slightly lower so hero stays clean) */}
+          <div className="mx-auto mt-10 max-w-3xl rounded-2xl border border-white/15 bg-white/5 p-6 text-left shadow-sm backdrop-blur">
+            <p className="text-sm font-extrabold text-white">What this teaches you:</p>
+
+            <ul className="mt-4 space-y-3 text-base text-white/85">
+              <li className="flex gap-3">
+                <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-400" />
+                <span>How institutions build positions in stages (often largest first).</span>
+              </li>
+
+              <li className="flex gap-3">
+                <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-400" />
+                <span>
+                  Why price returns to specific zones when positions aren’t fully built.
+                </span>
+              </li>
+
+              <li className="flex gap-3">
+                <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-400" />
+                <span>
+                  How profit-taking appears through structure shifts and larger retracements.
+                </span>
+              </li>
+
+              <li className="flex gap-3">
+                <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-400" />
+                <span>
+                  Why breakout failures and “stop hunts” are usually liquidity events — not
+                  randomness.
+                </span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
