@@ -170,11 +170,10 @@ export default function CourseSections() {
 
             {/* PDF Preview Thumbnails */}
             <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-              <p className="text-sm font-semibold text-slate-900">
-                Preview pages (partial)
-              </p>
+              <p className="text-sm font-semibold text-slate-900">Preview pages (partial)</p>
               <p className="mt-2 text-sm text-slate-600">
-                Click to zoom. Previews are partial / watermarked so you can see the style without giving away the full method.
+                Click to zoom. Previews are partial / watermarked so you can see the style without
+                giving away the full method.
               </p>
 
               <div className="mt-5 grid gap-4 md:grid-cols-3">
@@ -195,9 +194,7 @@ export default function CourseSections() {
                         sizes="(max-width: 768px) 100vw, 33vw"
                       />
                     </div>
-                    <p className="mt-2 text-xs font-semibold text-slate-700">
-                      {p.label}
-                    </p>
+                    <p className="mt-2 text-xs font-semibold text-slate-700">{p.label}</p>
                   </button>
                 ))}
               </div>
@@ -251,38 +248,72 @@ export default function CourseSections() {
               >
                 Get the PDF — £25
               </a>
-              <p className="text-sm text-slate-600">
-                One-time purchase. Instant download.
-              </p>
+              <p className="text-sm text-slate-600">One-time purchase. Instant download.</p>
             </div>
           </div>
 
           {/* =========================
-              WHO IT’S FOR
+              TRANSFORMATION (LIQUIDITY SHIFT)
              ========================= */}
           <div className="mt-16 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
-            <h3 className="text-xl font-bold text-slate-900">Who this is for</h3>
+            <h3 className="text-2xl font-bold text-slate-900">
+              What changes when you start reading liquidity
+            </h3>
 
-            <div className="mt-6 grid gap-6 md:grid-cols-2">
-              <div>
-                <p className="font-semibold text-slate-900">✅ You’ll like this if:</p>
-                <ul className="mt-3 space-y-2 text-slate-700">
-                  <li>• You’re tired of being “right” on direction but wrong on timing</li>
-                  <li>• You want to understand what price is doing before you enter</li>
-                  <li>• You’re done with signal-dependence and indicator noise</li>
-                  <li>• You want a model you can apply across pairs/timeframes</li>
+            <p className="mt-3 text-slate-600">
+              Nothing about the market changes. Your interpretation does. And that changes your
+              behaviour.
+            </p>
+
+            <div className="mt-8 grid gap-8 md:grid-cols-2">
+              {/* Before */}
+              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+                <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
+                  Before
+                </p>
+
+                <ul className="mt-4 space-y-3 text-slate-700">
+                  <li>• You focus on entries instead of positioning</li>
+                  <li>• You trade breakouts without asking who needs liquidity</li>
+                  <li>• Stops are placed reactively, not structurally</li>
+                  <li>• “Stopped out then it runs” feels random</li>
+                  <li>• You analyse candles — not participation</li>
                 </ul>
               </div>
 
-              <div>
-                <p className="font-semibold text-slate-900">❌ Not for you if:</p>
-                <ul className="mt-3 space-y-2 text-slate-700">
-                  <li>• You want guaranteed profits or a “magic setup”</li>
-                  <li>• You want buy/sell signals instead of learning to read context</li>
-                  <li>• You’re not willing to adjust how you interpret structure</li>
-                  <li>• You’re looking for entertainment, not a practical framework</li>
+              {/* After */}
+              <div className="rounded-2xl border border-blue-200 bg-blue-50 p-6">
+                <p className="text-sm font-semibold uppercase tracking-wide text-blue-700">
+                  After
+                </p>
+
+                <ul className="mt-4 space-y-3 text-blue-900">
+                  <li>• You mark origin zones before looking for entries</li>
+                  <li>• You wait for liquidity return instead of chasing moves</li>
+                  <li>• Stops are placed based on structure invalidation</li>
+                  <li>• You recognise profit-taking through structure shifts</li>
+                  <li>• You interpret price as a positioning game</li>
                 </ul>
               </div>
+            </div>
+
+            <div className="mt-8 text-center">
+              <p className="mx-auto max-w-2xl text-sm text-slate-600">
+                The goal isn’t to predict every move. It’s to stop participating where institutions
+                are already finished — and start aligning where they still need orders.
+              </p>
+            </div>
+
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <a
+                href={stripeUrl}
+                onClick={handleCheckoutClick}
+                className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-extrabold text-white shadow-sm transition hover:bg-blue-500"
+              >
+                Get the PDF — £25
+              </a>
+
+              <p className="text-sm text-slate-600">One-time purchase. Instant download.</p>
             </div>
           </div>
 
@@ -290,9 +321,7 @@ export default function CourseSections() {
               GUARANTEE / RISK REVERSAL
              ========================= */}
           <div className="mt-10 rounded-2xl border border-blue-100 bg-blue-50 p-8 shadow-sm">
-            <h3 className="text-xl font-bold text-blue-950">
-              Simple make-it-right guarantee
-            </h3>
+            <h3 className="text-xl font-bold text-blue-950">Simple make-it-right guarantee</h3>
             <p className="mt-3 text-blue-900">
               If you read the PDF and you don’t get at least one clear “that explains it” moment,
               email support and we’ll make it right. No back-and-forth.
@@ -363,8 +392,8 @@ export default function CourseSections() {
               Stop trading outcomes. Start trading context.
             </h3>
             <p className="mx-auto mt-3 max-w-2xl text-slate-200">
-              A practical, no-hype PDF that explains how institutions need liquidity — and how
-              that shapes traps, reversals, and profit-taking.
+              A practical, no-hype PDF that explains how institutions need liquidity — and how that
+              shapes traps, reversals, and profit-taking.
             </p>
 
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -400,7 +429,8 @@ export default function CourseSections() {
                 <p className="font-semibold text-slate-900">How do I receive the PDF?</p>
                 <p className="mt-2 text-slate-700">
                   Immediately after checkout. You’ll see confirmation on Stripe and you’ll receive
-                  an email receipt. If anything goes wrong, email support and we’ll sort it quickly.
+                  an email receipt. If anything goes wrong, email support and we’ll sort it
+                  quickly.
                 </p>
               </div>
 
@@ -415,8 +445,8 @@ export default function CourseSections() {
               <div className="rounded-xl border border-slate-200 bg-white p-6">
                 <p className="font-semibold text-slate-900">Do I need indicators?</p>
                 <p className="mt-2 text-slate-700">
-                  No. This is structure + liquidity context. If you currently use indicators, you’ll
-                  likely rely on them less once you can read price behaviour properly.
+                  No. This is structure + liquidity context. If you currently use indicators,
+                  you’ll likely rely on them less once you can read price behaviour properly.
                 </p>
               </div>
 
