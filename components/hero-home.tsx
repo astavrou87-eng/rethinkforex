@@ -64,7 +64,7 @@ export default function HeroHome() {
             zones.
             <span className="font-extrabold text-white">
               {" "}
-              This PDF shows you how to read that pressure in structure — not indicators.
+              This PDF shows you how to read that pressure — and apply it directly to your own trading.
             </span>
           </p>
 
