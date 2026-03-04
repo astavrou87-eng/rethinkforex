@@ -52,7 +52,8 @@ export default function HeroHome() {
             It’s that you were shown a version of trading that ignores{" "}
             <span className="relative inline-block font-black">
               <span className="relative z-10">what really moves price</span>
-              <span className="absolute inset-x-0 -bottom-1 z-0 h-3 rounded bg-yellow-400/80" />
+              {/* underline hugs text (not full width) + slightly thinner on mobile */}
+              <span className="absolute left-0 right-0 -bottom-1 z-0 h-2 md:h-3 rounded bg-yellow-400/80" />
             </span>
             .
           </h1>
