@@ -37,29 +37,31 @@ export default function HeroHome() {
       </div>
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="pt-16 pb-12 text-center md:pt-24 md:pb-16">
+        <div className="pt-14 pb-12 text-center md:pt-24 md:pb-16">
           {/* Eyebrow (personal + direct) */}
-          <p className="mx-auto mt-2 max-w-3xl text-base font-semibold text-white/75 md:text-lg">
-            You learned{" "}
-            <span className="text-white">setups</span>. Institutions trade{" "}
+          <p className="mx-auto mt-2 max-w-3xl text-sm font-semibold text-white/75 sm:text-base md:text-lg">
+            You learned <span className="text-white">setups</span>. Institutions trade{" "}
             <span className="text-white">liquidity</span>.
           </p>
 
           {/* Headline */}
-          <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-white md:text-7xl">
+          <h1 className="mx-auto mt-4 max-w-4xl text-4xl font-extrabold tracking-tight text-white leading-[1.08] sm:text-5xl sm:leading-tight md:text-7xl">
             It’s not that you can’t trade.
-            <br />
+            {/* Only force the line break on sm+ to avoid weird mobile wrapping */}
+            <span className="hidden sm:inline">
+              <br />
+            </span>{" "}
             It’s that you were shown a version of trading that ignores{" "}
-            <span className="relative inline-block font-black">
-              <span className="relative z-10">what really moves price</span>
-              {/* underline hugs text (not full width) + slightly thinner on mobile */}
-              <span className="absolute left-0 right-0 -bottom-1 z-0 h-2 md:h-3 rounded bg-yellow-400/80" />
+            <span className="font-black">
+              {/* Marker-style highlight that works across wrapped lines */}
+              <span className="bg-yellow-400/80 text-slate-950 px-2 py-1 rounded box-decoration-clone">
+                what really moves price.
+              </span>
             </span>
-            .
           </h1>
 
           {/* Subhead */}
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-white/85 md:text-xl">
+          <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-white/85 sm:text-lg md:text-xl">
             <span className="font-semibold text-white">
               Banks move markets by targeting liquidity.
             </span>{" "}
