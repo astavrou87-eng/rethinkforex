@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import type React from "react";
 
 export default function HeroHome() {
   const stripeUrl = "https://buy.stripe.com/28EfZg0WM6fi3ZTbMrdjO00";
@@ -37,38 +38,39 @@ export default function HeroHome() {
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="pt-16 pb-12 text-center md:pt-24 md:pb-16">
-          {/* Pre-head (tight + direct) */}
+          {/* Eyebrow (personal + direct) */}
           <p className="mx-auto mt-2 max-w-3xl text-base font-semibold text-white/75 md:text-lg">
-            You were taught to “find entries.” Institutions are forced to find{" "}
+            You learned{" "}
+            <span className="text-white">setups</span>. Institutions trade{" "}
             <span className="text-white">liquidity</span>.
           </p>
 
           {/* Headline */}
           <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-white md:text-7xl">
-            Institutions can’t trade whenever they want.
+            It’s not that you can’t trade.
             <br />
-            They need{" "}
+            It’s that you were shown a version of trading that ignores{" "}
             <span className="relative inline-block font-black">
-              <span className="relative z-10">liquidity</span>
+              <span className="relative z-10">what really moves price</span>
               <span className="absolute inset-x-0 -bottom-1 z-0 h-3 rounded bg-yellow-400/80" />
             </span>
             .
           </h1>
 
-          {/* Subhead (mechanism → personal relevance) */}
+          {/* Subhead */}
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-white/85 md:text-xl">
-            Large positions require opposing orders. To enter, scale, and take profits,
-            institutions must trade against flow — that constraint is why breakouts fail,
-            stops get{" "}
-            <span className="font-semibold text-white">hit</span>, and price returns to the same
-            zones.
+            <span className="font-semibold text-white">
+              Banks move markets by targeting liquidity.
+            </span>{" "}
+            You’ve been taught to react after the move.
             <span className="font-extrabold text-white">
               {" "}
-              This PDF shows you how to read that pressure — and apply it directly to your own trading.
+              Learn the framework institutions use for your own trading — explained simply
+              inside this PDF.
             </span>
           </p>
 
-          {/* Trust/clarity pills (moved BELOW headline/subhead, 2 only) */}
+          {/* Trust/clarity pills */}
           <div className="mx-auto mt-6 flex max-w-3xl flex-wrap items-center justify-center gap-3 text-sm text-white/85">
             <div className="rounded-xl border border-white/15 bg-white/5 px-4 py-2 shadow-sm backdrop-blur">
               <span className="font-extrabold text-white">Instant</span> PDF access
@@ -100,7 +102,7 @@ export default function HeroHome() {
             Educational content only. Trading involves risk. No guarantees.
           </p>
 
-          {/* Mechanism Summary Card (kept, but slightly lower so hero stays clean) */}
+          {/* Mechanism Summary Card */}
           <div className="mx-auto mt-10 max-w-3xl rounded-2xl border border-white/15 bg-white/5 p-6 text-left shadow-sm backdrop-blur">
             <p className="text-sm font-extrabold text-white">What this teaches you:</p>
 
