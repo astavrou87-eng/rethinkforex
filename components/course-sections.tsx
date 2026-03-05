@@ -3,30 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import StripeCheckoutButton from "@/components/stripe-checkout-button";
 
 export default function CourseSections() {
-  const stripeUrl = "https://buy.stripe.com/28EfZg0WM6fi3ZTbMrdjO00";
-
   const [zoomSrc, setZoomSrc] = useState<string | null>(null);
   const [zoomAlt, setZoomAlt] = useState<string>("");
-
-  const handleCheckoutClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-
-    try {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const w = window as any;
-      if (typeof w.fbq === "function") {
-        w.fbq("track", "InitiateCheckout", { value: 25.0, currency: "GBP" });
-      }
-    } catch {
-      // no-op
-    }
-
-    setTimeout(() => {
-      window.location.href = stripeUrl;
-    }, 150);
-  };
 
   const openZoom = (src: string, alt: string) => {
     setZoomSrc(src);
@@ -45,7 +26,6 @@ export default function CourseSections() {
 
     if (zoomSrc) {
       document.addEventListener("keydown", onKeyDown);
-      // Prevent background scroll when modal open
       document.body.style.overflow = "hidden";
     }
 
@@ -141,13 +121,9 @@ export default function CourseSections() {
               </ul>
 
               <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <a
-                  href={stripeUrl}
-                  onClick={handleCheckoutClick}
-                  className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-extrabold text-white shadow-sm transition hover:bg-blue-500"
-                >
+                <StripeCheckoutButton className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-extrabold text-white shadow-sm transition hover:bg-blue-500">
                   Get the PDF — £25
-                </a>
+                </StripeCheckoutButton>
 
                 <Link
                   href="/risk-disclaimer"
@@ -206,53 +182,6 @@ export default function CourseSections() {
           </div>
 
           {/* =========================
-              WHY CHOOSE US (ECOM-STYLE DIFFERENTIATION)
-             ========================= */}
-          <div className="mt-16 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
-            <h3 className="text-2xl font-bold text-slate-900">
-              Why Rethink Forex works when other courses didn’t
-            </h3>
-            <p className="mt-3 text-slate-600">
-              Most retail education trains you to react to price. Institutions move size — they
-              need liquidity to enter, exit, and take profits. This PDF teaches you to read the
-              market through that constraint.
-            </p>
-
-            <div className="mt-6 grid gap-6 md:grid-cols-2">
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-                <p className="font-semibold text-slate-900">Typical trading education</p>
-                <ul className="mt-3 space-y-2 text-slate-700">
-                  <li>• “Here’s an indicator / pattern”</li>
-                  <li>• “Find a perfect entry”</li>
-                  <li>• “Take more trades / be more disciplined”</li>
-                  <li>• Strategy-hopping without a consistent model of price</li>
-                </ul>
-              </div>
-
-              <div className="rounded-2xl border border-blue-200 bg-blue-50 p-6">
-                <p className="font-semibold text-blue-950">Rethink Forex</p>
-                <ul className="mt-3 space-y-2 text-blue-900">
-                  <li>• Shows where liquidity is required (and where it appears)</li>
-                  <li>• Explains staged position building (often largest first)</li>
-                  <li>• Teaches structure shifts as profit-taking / distribution clues</li>
-                  <li>• Gives you a repeatable context lens across pairs/timeframes</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <a
-                href={stripeUrl}
-                onClick={handleCheckoutClick}
-                className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-extrabold text-white shadow-sm transition hover:bg-blue-500"
-              >
-                Get the PDF — £25
-              </a>
-              <p className="text-sm text-slate-600">One-time purchase. Instant download.</p>
-            </div>
-          </div>
-
-          {/* =========================
               TRANSFORMATION (LIQUIDITY SHIFT)
              ========================= */}
           <div className="mt-16 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
@@ -305,13 +234,9 @@ export default function CourseSections() {
             </div>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a
-                href={stripeUrl}
-                onClick={handleCheckoutClick}
-                className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-extrabold text-white shadow-sm transition hover:bg-blue-500"
-              >
+              <StripeCheckoutButton className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-extrabold text-white shadow-sm transition hover:bg-blue-500">
                 Get the PDF — £25
-              </a>
+              </StripeCheckoutButton>
 
               <p className="text-sm text-slate-600">One-time purchase. Instant download.</p>
             </div>
@@ -332,7 +257,7 @@ export default function CourseSections() {
           </div>
 
           {/* =========================
-              TESTIMONIALS (STRUCTURE-FOCUSED)
+              TESTIMONIALS
              ========================= */}
           <div className="mt-16">
             <h3 className="text-2xl font-bold text-slate-900">What traders are saying</h3>
@@ -397,13 +322,9 @@ export default function CourseSections() {
             </p>
 
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a
-                href={stripeUrl}
-                onClick={handleCheckoutClick}
-                className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-extrabold text-white shadow-sm transition hover:bg-blue-500"
-              >
+              <StripeCheckoutButton className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-extrabold text-white shadow-sm transition hover:bg-blue-500">
                 Get the PDF — £25
-              </a>
+              </StripeCheckoutButton>
 
               <a
                 href="/risk-disclaimer"
@@ -487,13 +408,9 @@ export default function CourseSections() {
             </p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
-              <a
-                href={stripeUrl}
-                onClick={handleCheckoutClick}
-                className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-12 py-5 text-lg font-extrabold text-white shadow-sm transition hover:bg-blue-500"
-              >
+              <StripeCheckoutButton className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-12 py-5 text-lg font-extrabold text-white shadow-sm transition hover:bg-blue-500">
                 Get the PDF — £25
-              </a>
+              </StripeCheckoutButton>
 
               <a
                 href="/risk-disclaimer"

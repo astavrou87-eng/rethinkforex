@@ -1,6 +1,7 @@
 import Hero from "@/components/hero-home";
 import TransformationSection from "@/components/transformation-section";
 import CourseSections from "@/components/course-sections";
+import StripeCheckoutButton from "@/components/stripe-checkout-button";
 
 export const metadata = {
   title: "Rethink Forex | Understand Liquidity & Trade With Institutional Context",
@@ -202,12 +203,9 @@ export default function Home() {
               </div>
 
               <div className="mt-8 text-center">
-                <a
-                  href="https://buy.stripe.com/28EfZg0WM6fi3ZTbMrdjO00"
-                  className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-10 py-4 text-base font-extrabold text-white transition hover:bg-blue-500"
-                >
+                <StripeCheckoutButton className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-10 py-4 text-base font-extrabold text-white transition hover:bg-blue-500">
                   Get the PDF — £25
-                </a>
+                </StripeCheckoutButton>
               </div>
             </div>
 

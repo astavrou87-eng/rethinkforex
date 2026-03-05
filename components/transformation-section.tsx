@@ -2,28 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import StripeCheckoutButton from "@/components/stripe-checkout-button";
 
 export default function TransformationSection() {
-  const stripeUrl = "https://buy.stripe.com/28EfZg0WM6fi3ZTbMrdjO00";
-
-  const handleCheckoutClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-
-    try {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const w = window as any;
-      if (typeof w.fbq === "function") {
-        w.fbq("track", "InitiateCheckout", { value: 25.0, currency: "GBP" });
-      }
-    } catch {
-      // no-op
-    }
-
-    setTimeout(() => {
-      window.location.href = stripeUrl;
-    }, 150);
-  };
-
   return (
     <section className="relative overflow-hidden">
       {/* Slightly lighter dark than hero, and a clean fade into the section below */}
@@ -55,7 +36,8 @@ export default function TransformationSection() {
               </div>
 
               <p className="mt-3 text-sm text-white/70">
-                The edge isn’t a secret indicator — it’s understanding how size actually moves through price.
+                The edge isn’t a secret indicator — it’s understanding how size actually moves
+                through price.
               </p>
             </div>
 
@@ -73,8 +55,8 @@ export default function TransformationSection() {
 
               <p className="mt-5 text-base leading-relaxed text-white/85">
                 Banks and large institutions can’t just “click buy.” They need{" "}
-                <span className="font-semibold text-white">liquidity</span> —
-                enough opposing orders — to{" "}
+                <span className="font-semibold text-white">liquidity</span> — enough opposing
+                orders — to{" "}
                 <span className="font-semibold text-white">
                   enter, scale, take profits, and exit
                 </span>
@@ -100,10 +82,18 @@ export default function TransformationSection() {
                     What you’ll be able to do after this PDF
                   </p>
                   <ul className="mt-3 space-y-2 text-sm text-white/80">
-                    <li>• Mark where large participation likely entered (origin moves + zones)</li>
-                    <li>• Recognise staged position building (and why the biggest order often comes first)</li>
+                    <li>
+                      • Mark where large participation likely entered (origin moves + zones)
+                    </li>
+                    <li>
+                      • Recognise staged position building (and why the biggest order often
+                      comes first)
+                    </li>
                     <li>• Spot profit-taking via structure shifts and larger retracements</li>
-                    <li>• Understand why price returns to key levels when liquidity is needed again</li>
+                    <li>
+                      • Understand why price returns to key levels when liquidity is needed
+                      again
+                    </li>
                   </ul>
                 </div>
 
@@ -120,15 +110,11 @@ export default function TransformationSection() {
                 </div>
               </div>
 
-              {/* CTA */}
+              {/* CTA (now shared tracked component) */}
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <a
-                  href={stripeUrl}
-                  onClick={handleCheckoutClick}
-                  className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-extrabold text-white shadow-sm transition hover:bg-blue-500"
-                >
+                <StripeCheckoutButton className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-extrabold text-white shadow-sm transition hover:bg-blue-500">
                   Get the PDF — £25
-                </a>
+                </StripeCheckoutButton>
 
                 <Link
                   href="/risk-disclaimer"
