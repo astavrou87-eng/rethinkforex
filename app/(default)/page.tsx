@@ -124,7 +124,7 @@ export default function Home() {
 
             <div className="mt-10 text-center">
               <StripeCheckoutButton className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-10 py-4 text-base font-extrabold text-white shadow-sm transition hover:bg-blue-500">
-                Get the Liquidity Guide — £25
+                Get Instant Access — £25
               </StripeCheckoutButton>
 
               <p className="mt-3 text-sm text-slate-500">

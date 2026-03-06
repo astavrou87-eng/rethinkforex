@@ -77,7 +77,7 @@ export default function HeroHome() {
           {/* CTA */}
           <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <StripeCheckoutButton className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-extrabold text-white shadow-sm transition hover:bg-blue-500 sm:px-10">
-              Get the Liquidity Guide — £25
+              Get Instant Access — £25
             </StripeCheckoutButton>
 
             <Link

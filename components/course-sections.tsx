@@ -65,7 +65,7 @@ export default function CourseSections() {
 
             <div className="mt-10 text-center">
               <StripeCheckoutButton className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-10 py-4 text-base font-extrabold text-white shadow-sm transition hover:bg-blue-500">
-                Get the Liquidity Guide — £25
+                Get Instant Access — £25
               </StripeCheckoutButton>
 
               <p className="mt-3 text-sm text-slate-500">
@@ -118,7 +118,7 @@ export default function CourseSections() {
 
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <StripeCheckoutButton className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-extrabold text-white shadow-sm transition hover:bg-blue-500">
-                Get the Liquidity Guide — £25
+                Get Instant Access — £25
               </StripeCheckoutButton>
 
               <Link
@@ -288,13 +288,13 @@ export default function CourseSections() {
             </h3>
 
             <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/80 md:text-lg">
-              Get the Liquidity Guide and use the context-first lens most retail traders never
+              Get Instant Access and use the context-first lens most retail traders never
               learn.
             </p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
               <StripeCheckoutButton className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-12 py-5 text-lg font-extrabold text-white shadow-sm transition hover:bg-blue-500">
-                Get the Liquidity Guide — £25
+                Get Instant Access — £25
               </StripeCheckoutButton>
 
               <Link
