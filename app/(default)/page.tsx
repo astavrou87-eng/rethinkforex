@@ -38,19 +38,17 @@ export default function Home() {
             </div>
 
             <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-2">
-              
               {/* Card 1 */}
               <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-                <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
-                  Section 1
-                </p>
-
-                <h3 className="mt-3 text-2xl font-extrabold tracking-tight text-slate-900">
+                <h3 className="text-2xl font-extrabold tracking-tight text-slate-900">
                   If you’ve traded forex for any length of time…
                 </h3>
 
-                <div className="mt-6 space-y-4 text-[17px] leading-relaxed text-slate-700">
-                  <p>If you’ve traded forex for any length of time, you’ve probably experienced something strange.</p>
+                <div className="mt-5 space-y-4 text-[17px] leading-relaxed text-slate-700">
+                  <p>
+                    If you’ve traded forex for any length of time, you’ve probably experienced
+                    something strange.
+                  </p>
 
                   <p>You study the chart.</p>
                   <p>Your idea is correct.</p>
@@ -64,9 +62,7 @@ export default function Home() {
                   <p>Again.</p>
                   <p>And again.</p>
 
-                  <p>
-                    After a while, you start asking yourself a painful question:
-                  </p>
+                  <p>After a while, you start asking yourself a painful question:</p>
 
                   <p className="text-xl font-extrabold text-slate-900">
                     “Am I just bad at this?”
@@ -76,15 +72,11 @@ export default function Home() {
 
               {/* Card 2 */}
               <div className="rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-sm">
-                <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
-                  Section 2
-                </p>
-
-                <h3 className="mt-3 text-2xl font-extrabold tracking-tight text-slate-900">
+                <h3 className="text-2xl font-extrabold tracking-tight text-slate-900">
                   At first, you assume the problem is you
                 </h3>
 
-                <div className="mt-6 space-y-4 text-[17px] leading-relaxed text-slate-700">
+                <div className="mt-5 space-y-4 text-[17px] leading-relaxed text-slate-700">
                   <p>At first, you assume the problem is discipline.</p>
 
                   <p>Maybe you’re overtrading.</p>
@@ -101,9 +93,7 @@ export default function Home() {
 
                   <p>And yet the same pattern keeps happening.</p>
 
-                  <p>
-                    You’re often right about direction…
-                  </p>
+                  <p>You’re often right about direction…</p>
 
                   <p className="text-xl font-extrabold text-slate-900">
                     But you still lose.
@@ -141,7 +131,6 @@ export default function Home() {
                 Instant PDF access. One-time purchase.
               </p>
             </div>
-
           </div>
         </div>
       </section>
