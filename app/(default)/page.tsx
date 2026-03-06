@@ -1,5 +1,4 @@
 import Hero from "@/components/hero-home";
-import TransformationSection from "@/components/transformation-section";
 import CourseSections from "@/components/course-sections";
 import StripeCheckoutButton from "@/components/stripe-checkout-button";
 
@@ -13,7 +12,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <TransformationSection />
 
       {/* =========================
           RECOGNITION / PAIN SECTION
@@ -40,6 +38,7 @@ export default function Home() {
             </div>
 
             <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-2">
+              
               {/* Card 1 */}
               <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
                 <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
@@ -127,7 +126,9 @@ export default function Home() {
               <p className="text-base leading-relaxed text-slate-700 md:text-lg">
                 That feeling is exactly why most traders keep jumping from one method to the next.
                 They assume the problem is themselves…
-                <span className="font-semibold text-slate-900"> when they may have been taught to look at the market the wrong way.</span>
+                <span className="font-semibold text-slate-900">
+                  {" "}when they may have been taught to look at the market the wrong way.
+                </span>
               </p>
             </div>
 
@@ -140,6 +141,7 @@ export default function Home() {
                 Instant PDF access. One-time purchase.
               </p>
             </div>
+
           </div>
         </div>
       </section>
