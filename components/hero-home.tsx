@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import StripeCheckoutButton from "@/components/stripe-checkout-button";
 
 export default function HeroHome() {
@@ -18,54 +17,63 @@ export default function HeroHome() {
       </div>
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="pt-14 pb-12 text-center md:pt-24 md:pb-16">
-          {/* Eyebrow */}
-          <p className="mx-auto mt-2 max-w-3xl text-sm font-semibold text-white/75 sm:text-base md:text-lg">
-            You learned <span className="text-white">setups</span>. Institutions trade{" "}
-            <span className="text-white">liquidity</span>.
-          </p>
-
-          {/* Headline (recognition-first to match your ad) */}
-          <h1 className="mx-auto mt-4 max-w-4xl text-4xl font-extrabold tracking-tight text-white leading-[1.08] sm:text-5xl sm:leading-tight md:text-7xl">
-            “I believe that my inconsistency isn’t because I’m undisciplined or broken... 
+        <div className="pt-10 pb-12 text-center md:pt-20 md:pb-16">
+          {/* Headline */}
+          <h1 className="mx-auto max-w-4xl text-4xl font-extrabold tracking-tight text-white leading-[1.08] sm:text-5xl sm:leading-tight md:text-7xl">
+            What if your inconsistency isn’t because you’re undisciplined…
             <span className="hidden sm:inline">
               <br />
             </span>{" "}
-            it’s because I’ve been trained to look at the{" "}
+            but because you were trained to look at the{" "}
             <span className="font-black">
               <span className="bg-yellow-400/80 text-slate-950 px-2 py-1 rounded box-decoration-clone">
-                market the wrong way.”
+                market the wrong way?
               </span>
             </span>
           </h1>
 
-          {/* Subhead (relief + bridge to mechanism) */}
-          <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-white/85 sm:text-lg md:text-xl">
-            You’re not “bad at trading.” Most retail traders are taught the wrong game:{" "}
-            <span className="font-semibold text-white">By learning where banks place their trades</span> you can place {" "}
-            <span className="font-semibold text-white">your own trades where they do. </span>.
-            <span className="font-extrabold text-white">
-              {" "}
-              This PDF allows you to stop blaming yourself. The retail trading method you learned is designed to lose.
-            </span>
-          </p>
+          {/* Subhead */}
+          <div className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-white/85 sm:text-lg md:text-xl">
+            <p>
+              <span className="font-semibold text-white">
+                You’re not “bad at trading.”
+              </span>{" "}
+              Most retail traders are taught the wrong game.
+            </p>
+
+            <p className="mt-3">
+              Banks and institutions don’t trade indicators or signals.
+              <br className="hidden sm:block" />
+              <span className="font-semibold text-white">
+                They trade structure and liquidity.
+              </span>
+            </p>
+
+            <p className="mt-3">
+              Once you understand where they position themselves,
+              <br className="hidden sm:block" />
+              <span className="font-extrabold text-white">
+                you stop blaming yourself — and start seeing the market differently.
+              </span>
+            </p>
+          </div>
 
           {/* Trust/clarity pills */}
-          <div className="mx-auto mt-6 flex max-w-3xl flex-wrap items-center justify-center gap-3 text-sm text-white/85">
-            <div className="rounded-xl border border-white/15 bg-white/5 px-4 py-2 shadow-sm backdrop-blur">
+          <div className="mx-auto mt-5 flex max-w-3xl flex-wrap items-center justify-center gap-2 text-sm text-white/85 sm:gap-3">
+            <div className="rounded-xl border border-white/15 bg-white/5 px-3 py-2 shadow-sm backdrop-blur sm:px-4">
               <span className="font-extrabold text-white">Instant</span> PDF access
             </div>
-            <div className="rounded-xl border border-white/15 bg-white/5 px-4 py-2 shadow-sm backdrop-blur">
+            <div className="rounded-xl border border-white/15 bg-white/5 px-3 py-2 shadow-sm backdrop-blur sm:px-4">
               <span className="font-extrabold text-white">No indicators.</span> No signals.
             </div>
-            <div className="rounded-xl border border-white/15 bg-white/5 px-4 py-2 shadow-sm backdrop-blur">
+            <div className="rounded-xl border border-white/15 bg-white/5 px-3 py-2 shadow-sm backdrop-blur sm:px-4">
               <span className="font-extrabold text-white">Secure</span> Stripe checkout
             </div>
           </div>
 
           {/* CTA */}
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <StripeCheckoutButton className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-10 py-4 text-base font-extrabold text-white shadow-sm transition hover:bg-blue-500">
+          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <StripeCheckoutButton className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-extrabold text-white shadow-sm transition hover:bg-blue-500 sm:px-10">
               Get the Liquidity Guide — £25
             </StripeCheckoutButton>
 
@@ -81,8 +89,8 @@ export default function HeroHome() {
             Educational content only. Trading involves risk. No guarantees.
           </p>
 
-          {/* Recognition + story + trust (above the fold persuasion) */}
-          <div className="mx-auto mt-10 max-w-4xl rounded-2xl border border-white/15 bg-white/5 p-6 text-left shadow-sm backdrop-blur">
+          {/* Recognition + story + trust */}
+          <div className="mx-auto mt-8 max-w-4xl rounded-2xl border border-white/15 bg-white/5 p-6 text-left shadow-sm backdrop-blur">
             <p className="text-sm font-extrabold text-white">If this sounds familiar…</p>
 
             <ul className="mt-4 space-y-3 text-base text-white/85">
@@ -138,40 +146,6 @@ export default function HeroHome() {
                 </p>
               </div>
             </div>
-          </div>
-
-          {/* Mechanism Summary Card */}
-          <div className="mx-auto mt-10 max-w-3xl rounded-2xl border border-white/15 bg-white/5 p-6 text-left shadow-sm backdrop-blur">
-            <p className="text-sm font-extrabold text-white">What this teaches you:</p>
-
-            <ul className="mt-4 space-y-3 text-base text-white/85">
-              <li className="flex gap-3">
-                <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-400" />
-                <span>How institutions build positions in stages (often largest first).</span>
-              </li>
-
-              <li className="flex gap-3">
-                <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-400" />
-                <span>
-                  Why price returns to specific zones when positions aren’t fully built.
-                </span>
-              </li>
-
-              <li className="flex gap-3">
-                <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-400" />
-                <span>
-                  How profit-taking appears through structure shifts and larger retracements.
-                </span>
-              </li>
-
-              <li className="flex gap-3">
-                <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-yellow-400" />
-                <span>
-                  Why breakout failures and “stop hunts” are usually liquidity events — not
-                  randomness.
-                </span>
-              </li>
-            </ul>
           </div>
         </div>
       </div>

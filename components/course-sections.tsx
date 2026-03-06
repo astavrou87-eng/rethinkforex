@@ -1,271 +1,173 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import StripeCheckoutButton from "@/components/stripe-checkout-button";
 
 export default function CourseSections() {
-  const [zoomSrc, setZoomSrc] = useState<string | null>(null);
-  const [zoomAlt, setZoomAlt] = useState<string>("");
-
-  const openZoom = (src: string, alt: string) => {
-    setZoomSrc(src);
-    setZoomAlt(alt);
-  };
-
-  const closeZoom = () => {
-    setZoomSrc(null);
-    setZoomAlt("");
-  };
-
-  useEffect(() => {
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") closeZoom();
-    };
-
-    if (zoomSrc) {
-      document.addEventListener("keydown", onKeyDown);
-      document.body.style.overflow = "hidden";
-    }
-
-    return () => {
-      document.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = "";
-    };
-  }, [zoomSrc]);
-
-  const previews = [
-    {
-      src: "/images/previews/p14.png",
-      alt: "Preview page 14 — institutional context framework (partial preview)",
-      label: "Preview page 14",
-    },
-    {
-      src: "/images/previews/p26.png",
-      alt: "Preview page 26 — profit-taking / structure shift example (partial preview)",
-      label: "Preview page 26",
-    },
-    {
-      src: "/images/previews/p34.png",
-      alt: "Preview page 34 — how to apply zones and returns (partial preview)",
-      label: "Preview page 34",
-    },
-  ];
-
   return (
-    <section className="relative bg-white">
+    <section className="relative bg-slate-50">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="py-16 md:py-24">
           {/* =========================
-              WHAT YOU’LL GET (LIGHT)
+              WHY BUY THIS
              ========================= */}
-          <div className="grid gap-10 md:grid-cols-2 md:items-center">
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight text-slate-900">
-                What you’ll learn inside the PDF
+          <div className="mx-auto max-w-5xl rounded-3xl border border-slate-200 bg-white p-8 shadow-sm md:p-12">
+            <div className="mx-auto max-w-3xl text-center">
+              <p className="text-sm font-semibold uppercase tracking-wide text-blue-700/80">
+                Why traders buy this guide
+              </p>
+
+              <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 md:text-5xl">
+                Because staying confused is expensive
               </h2>
 
-              <p className="mt-4 text-slate-600">
-                This isn’t “bank secrets” or signals. It’s a clear way to read price as a{" "}
+              <p className="mt-5 text-base leading-relaxed text-slate-600 md:text-lg">
+                Most traders don’t fail because they’re lazy or stupid.
+                <br className="hidden md:block" />
+                They fail because they keep trying to fix execution…
                 <span className="font-semibold text-slate-900">
-                  liquidity and positioning game
+                  {" "}
+                  when the real problem is how they’re reading the market.
                 </span>
-                — so you stop reacting at the end of the move and start understanding{" "}
-                <span className="font-semibold text-slate-900">why</span> price is behaving the
-                way it is.
-              </p>
-
-              <ul className="mt-6 space-y-3 text-slate-700">
-                <li className="flex gap-3">
-                  <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-600" />
-                  <span>
-                    How to identify{" "}
-                    <span className="font-semibold text-slate-900">
-                      likely institutional interest zones
-                    </span>{" "}
-                    (where price tends to originate, pause, trap, and reverse).
-                  </span>
-                </li>
-
-                <li className="flex gap-3">
-                  <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-600" />
-                  <span>
-                    Why moves often begin by{" "}
-                    <span className="font-semibold text-slate-900">
-                      consuming retail liquidity
-                    </span>{" "}
-                    first (the classic “stopped out then it runs” sequence).
-                  </span>
-                </li>
-
-                <li className="flex gap-3">
-                  <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-600" />
-                  <span>
-                    How to spot{" "}
-                    <span className="font-semibold text-slate-900">structure shifts</span>{" "}
-                    that signal distribution / profit-taking behaviour.
-                  </span>
-                </li>
-
-                <li className="flex gap-3">
-                  <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-600" />
-                  <span>
-                    A simple framework to stop chasing and start waiting for{" "}
-                    <span className="font-semibold text-slate-900">
-                      high-quality context
-                    </span>{" "}
-                    (zones + behaviour), like professionals do.
-                  </span>
-                </li>
-              </ul>
-
-              <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <StripeCheckoutButton className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-extrabold text-white shadow-sm transition hover:bg-blue-500">
-                  Get the PDF — £25
-                </StripeCheckoutButton>
-
-                <Link
-                  href="/risk-disclaimer"
-                  className="text-sm font-semibold text-slate-700 underline decoration-slate-300 underline-offset-4 hover:decoration-slate-500"
-                >
-                  Risk disclaimer
-                </Link>
-              </div>
-
-              <p className="mt-3 text-xs text-slate-500">
-                Instant access after checkout. Support:{" "}
-                <a
-                  href="mailto:support@rethinkforex.co.uk"
-                  className="underline decoration-slate-300 underline-offset-2 hover:decoration-slate-500"
-                >
-                  support@rethinkforex.co.uk
-                </a>
               </p>
             </div>
 
-            {/* PDF Preview Thumbnails */}
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-              <p className="text-sm font-semibold text-slate-900">Preview pages (partial)</p>
-              <p className="mt-2 text-sm text-slate-600">
-                Click to zoom. Previews are partial / watermarked so you can see the style without
-                giving away the full method.
-              </p>
-
-              <div className="mt-5 grid gap-4 md:grid-cols-3">
-                {previews.map((p) => (
-                  <button
-                    key={p.src}
-                    type="button"
-                    onClick={() => openZoom(p.src, p.alt)}
-                    className="group rounded-xl border border-slate-200 bg-white p-2 text-left shadow-sm transition hover:shadow-md"
-                    aria-label={`Zoom ${p.label}`}
-                  >
-                    <div className="relative aspect-[3/4] w-full overflow-hidden rounded-lg bg-slate-100">
-                      <Image
-                        src={p.src}
-                        alt={p.alt}
-                        fill
-                        className="object-cover transition group-hover:scale-[1.02]"
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                      />
-                    </div>
-                    <p className="mt-2 text-xs font-semibold text-slate-700">{p.label}</p>
-                  </button>
-                ))}
-              </div>
-
-              <p className="mt-3 text-xs text-slate-500">
-                Educational content only. Trading involves risk. No guarantees.
-              </p>
-            </div>
-          </div>
-
-          {/* =========================
-              TRANSFORMATION (LIQUIDITY SHIFT)
-             ========================= */}
-          <div className="mt-16 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
-            <h3 className="text-2xl font-bold text-slate-900">
-              What changes when you start reading liquidity
-            </h3>
-
-            <p className="mt-3 text-slate-600">
-              Nothing about the market changes. Your interpretation does. And that changes your
-              behaviour.
-            </p>
-
-            <div className="mt-8 grid gap-8 md:grid-cols-2">
-              {/* Before */}
+            <div className="mt-10 grid gap-6 md:grid-cols-3">
               <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-                <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
-                  Before
+                <h3 className="text-lg font-extrabold text-slate-900">
+                  Stop blaming yourself
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                  If you’re often right about direction but still losing, the issue may not be
+                  discipline.
                 </p>
-
-                <ul className="mt-4 space-y-3 text-slate-700">
-                  <li>• You focus on entries instead of positioning</li>
-                  <li>• You trade breakouts without asking who needs liquidity</li>
-                  <li>• Stops are placed reactively, not structurally</li>
-                  <li>• “Stopped out then it runs” feels random</li>
-                  <li>• You analyse candles — not participation</li>
-                </ul>
               </div>
 
-              {/* After */}
-              <div className="rounded-2xl border border-blue-200 bg-blue-50 p-6">
-                <p className="text-sm font-semibold uppercase tracking-wide text-blue-700">
-                  After
+              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+                <h3 className="text-lg font-extrabold text-slate-900">
+                  Understand what’s really happening
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                  Learn why price often takes retail traders out first, then moves in the expected
+                  direction.
                 </p>
+              </div>
 
-                <ul className="mt-4 space-y-3 text-blue-900">
-                  <li>• You mark origin zones before looking for entries</li>
-                  <li>• You wait for liquidity return instead of chasing moves</li>
-                  <li>• Stops are placed based on structure invalidation</li>
-                  <li>• You recognise profit-taking through structure shifts</li>
-                  <li>• You interpret price as a positioning game</li>
-                </ul>
+              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+                <h3 className="text-lg font-extrabold text-slate-900">
+                  Get a clearer lens
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                  Replace random-feeling outcomes with a context-first way of reading price.
+                </p>
               </div>
             </div>
 
-            <div className="mt-8 text-center">
-              <p className="mx-auto max-w-2xl text-sm text-slate-600">
-                The goal isn’t to predict every move. It’s to stop participating where institutions
-                are already finished — and start aligning where they still need orders.
-              </p>
-            </div>
-
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <StripeCheckoutButton className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-extrabold text-white shadow-sm transition hover:bg-blue-500">
-                Get the PDF — £25
+            <div className="mt-10 text-center">
+              <StripeCheckoutButton className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-10 py-4 text-base font-extrabold text-white shadow-sm transition hover:bg-blue-500">
+                Get the Liquidity Guide — £25
               </StripeCheckoutButton>
 
-              <p className="text-sm text-slate-600">One-time purchase. Instant download.</p>
+              <p className="mt-3 text-sm text-slate-500">
+                Instant PDF access. One-time purchase.
+              </p>
             </div>
           </div>
 
           {/* =========================
-              GUARANTEE / RISK REVERSAL
+              WHAT YOU’LL LEARN
              ========================= */}
-          <div className="mt-10 rounded-2xl border border-blue-100 bg-blue-50 p-8 shadow-sm">
-            <h3 className="text-xl font-bold text-blue-950">Simple make-it-right guarantee</h3>
-            <p className="mt-3 text-blue-900">
-              If you read the PDF and you don’t get at least one clear “that explains it” moment,
-              email support and we’ll make it right. No back-and-forth.
+          <div className="mx-auto mt-16 max-w-5xl rounded-3xl border border-slate-200 bg-white p-8 shadow-sm md:p-12">
+            <div className="mx-auto max-w-3xl text-center">
+              <p className="text-sm font-semibold uppercase tracking-wide text-blue-700/80">
+                What you’ll learn
+              </p>
+
+              <h3 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl">
+                What’s inside the PDF
+              </h3>
+
+              <p className="mt-5 text-base leading-relaxed text-slate-600 md:text-lg">
+                This isn’t another strategy pack or indicator system.
+                <br className="hidden md:block" />
+                It’s a practical explanation of how price behaves when large participants need
+                liquidity.
+              </p>
+            </div>
+
+            <div className="mt-10 grid gap-4 md:grid-cols-2">
+              {[
+                "How institutions build positions in stages (often largest first).",
+                "Why price returns to certain zones when positions aren’t fully built.",
+                "Why moves often begin by consuming retail liquidity first.",
+                "How to identify likely institutional interest zones.",
+                "How profit-taking can appear through structure shifts and larger retracements.",
+                "How to stop chasing entries and start waiting for better context.",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="rounded-2xl border border-slate-200 bg-slate-50 p-5"
+                >
+                  <div className="flex gap-3">
+                    <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-blue-600" />
+                    <p className="text-sm leading-relaxed text-slate-700">{item}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <StripeCheckoutButton className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-extrabold text-white shadow-sm transition hover:bg-blue-500">
+                Get the Liquidity Guide — £25
+              </StripeCheckoutButton>
+
+              <Link
+                href="/risk-disclaimer"
+                className="text-sm font-semibold text-slate-700 underline decoration-slate-300 underline-offset-4 hover:decoration-slate-500"
+              >
+                Risk disclaimer
+              </Link>
+            </div>
+
+            <p className="mt-3 text-center text-xs text-slate-500">
+              Educational content only. Trading involves risk. No guarantees.
             </p>
-            <p className="mt-2 text-xs text-blue-900/80">
-              Educational content — no profit guarantees, no trading advice.
-            </p>
+          </div>
+
+          {/* =========================
+              GUARANTEE
+             ========================= */}
+          <div className="mx-auto mt-12 max-w-5xl rounded-3xl border border-blue-100 bg-blue-50 p-8 shadow-sm md:p-10">
+            <div className="mx-auto max-w-3xl text-center">
+              <h3 className="text-2xl font-bold text-blue-950">Simple make-it-right guarantee</h3>
+              <p className="mt-4 text-base leading-relaxed text-blue-900">
+                If you read the PDF and you don’t get at least one clear
+                <span className="font-semibold"> “that explains it” </span>
+                moment, email support and we’ll make it right.
+              </p>
+              <p className="mt-3 text-sm text-blue-900/80">
+                No profit guarantees. No trading advice. Just clear educational material.
+              </p>
+            </div>
           </div>
 
           {/* =========================
               TESTIMONIALS
              ========================= */}
-          <div className="mt-16">
-            <h3 className="text-2xl font-bold text-slate-900">What traders are saying</h3>
-            <p className="mt-2 text-slate-600">
-              Feedback from traders using the Rethink Forex framework.
-            </p>
+          <div className="mx-auto mt-16 max-w-5xl">
+            <div className="text-center">
+              <p className="text-sm font-semibold uppercase tracking-wide text-blue-700/80">
+                Proof
+              </p>
+              <h3 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl">
+                What traders are saying
+              </h3>
+              <p className="mt-4 text-base text-slate-600">
+                Feedback from traders using the Rethink Forex framework.
+              </p>
+            </div>
 
-            <div className="mt-6 grid gap-6 md:grid-cols-2">
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
               {[
                 {
                   quote:
@@ -275,7 +177,7 @@ export default function CourseSections() {
                 },
                 {
                   quote:
-                    "I finally understood what ‘liquidity’ means in practical terms. Breakout failures started making sense, and I stopped treating every move as random.",
+                    "I finally understood what liquidity means in practical terms. Breakout failures started making sense, and I stopped treating every move as random.",
                   name: "Andrew M.",
                   title: "Prop-Firm Challenge Trader",
                 },
@@ -294,10 +196,10 @@ export default function CourseSections() {
               ].map((t) => (
                 <div
                   key={t.name}
-                  className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
+                  className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
                 >
                   <div className="mb-3 text-yellow-400">★★★★★</div>
-                  <p className="text-slate-700">“{t.quote}”</p>
+                  <p className="text-slate-700 leading-relaxed">“{t.quote}”</p>
                   <div className="mt-4 font-semibold text-slate-900">{t.name}</div>
                   <div className="text-sm text-slate-500">{t.title}</div>
                 </div>
@@ -310,76 +212,52 @@ export default function CourseSections() {
           </div>
 
           {/* =========================
-              MINI CTA
-             ========================= */}
-          <div className="mt-12 rounded-2xl border border-slate-200 bg-slate-900 px-6 py-10 text-center text-white shadow-sm">
-            <h3 className="text-2xl font-extrabold md:text-3xl">
-              Stop trading outcomes. Start trading context.
-            </h3>
-            <p className="mx-auto mt-3 max-w-2xl text-slate-200">
-              A practical, no-hype PDF that explains how institutions need liquidity — and how that
-              shapes traps, reversals, and profit-taking.
-            </p>
-
-            <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <StripeCheckoutButton className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-extrabold text-white shadow-sm transition hover:bg-blue-500">
-                Get the PDF — £25
-              </StripeCheckoutButton>
-
-              <a
-                href="/risk-disclaimer"
-                className="inline-flex items-center justify-center rounded-xl border border-white/25 bg-white/5 px-8 py-4 text-base font-semibold text-white shadow-sm transition hover:bg-white/10"
-              >
-                Read the risk disclaimer
-              </a>
-            </div>
-
-            <p className="mt-4 text-xs text-slate-300">
-              Educational content only. Trading involves risk. No guarantees.
-            </p>
-          </div>
-
-          {/* =========================
               FAQ
              ========================= */}
-          <div className="mt-16">
-            <h3 className="text-2xl font-bold text-slate-900">FAQ</h3>
+          <div className="mx-auto mt-16 max-w-5xl">
+            <div className="text-center">
+              <p className="text-sm font-semibold uppercase tracking-wide text-blue-700/80">
+                FAQ
+              </p>
+              <h3 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl">
+                Common questions
+              </h3>
+            </div>
 
-            <div className="mt-6 space-y-4">
-              <div className="rounded-xl border border-slate-200 bg-white p-6">
+            <div className="mt-10 space-y-4">
+              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                 <p className="font-semibold text-slate-900">How do I receive the PDF?</p>
                 <p className="mt-2 text-slate-700">
-                  Immediately after checkout. You’ll see confirmation on Stripe and you’ll receive
-                  an email receipt. If anything goes wrong, email support and we’ll sort it
-                  quickly.
+                  Immediately after checkout. You’ll receive confirmation and access right away. If
+                  anything goes wrong, email support and we’ll sort it quickly.
                 </p>
               </div>
 
-              <div className="rounded-xl border border-slate-200 bg-white p-6">
+              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                 <p className="font-semibold text-slate-900">Is this beginner-friendly?</p>
                 <p className="mt-2 text-slate-700">
-                  Yes — it’s written to be clear and practical. If you already trade, it helps you
-                  stop guessing and start filtering for context.
+                  Yes. It’s written to be clear and practical. If you already trade, it will help
+                  you stop guessing and start filtering for context.
                 </p>
               </div>
 
-              <div className="rounded-xl border border-slate-200 bg-white p-6">
+              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                 <p className="font-semibold text-slate-900">Do I need indicators?</p>
                 <p className="mt-2 text-slate-700">
-                  No. This is structure + liquidity context. If you currently use indicators,
-                  you’ll likely rely on them less once you can read price behaviour properly.
+                  No. This is about structure + liquidity context. If you currently use indicators,
+                  you may rely on them less once you understand price behaviour better.
                 </p>
               </div>
 
-              <div className="rounded-xl border border-slate-200 bg-white p-6">
+              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                 <p className="font-semibold text-slate-900">Do you guarantee profits?</p>
                 <p className="mt-2 text-slate-700">
-                  No. Trading involves risk. This is educational content designed to improve your
-                  interpretation of price — not a promise of returns.
+                  No. Trading involves risk. This is educational content designed to improve how
+                  you interpret price — not a promise of returns.
                 </p>
               </div>
 
-              <div className="rounded-xl border border-slate-200 bg-white p-6">
+              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                 <p className="font-semibold text-slate-900">What if I have questions?</p>
                 <p className="mt-2 text-slate-700">
                   Email{" "}
@@ -398,81 +276,41 @@ export default function CourseSections() {
           {/* =========================
               FINAL CTA
              ========================= */}
-          <div className="mt-16 rounded-2xl bg-slate-900 px-8 py-10 text-center text-white">
-            <h3 className="text-2xl font-extrabold">
-              Ready to start reading price like a liquidity game?
+          <div className="mx-auto mt-16 max-w-5xl rounded-3xl bg-slate-900 px-8 py-10 text-center text-white shadow-sm md:px-12 md:py-14">
+            <p className="text-sm font-semibold uppercase tracking-wide text-blue-300/80">
+              Final step
+            </p>
+
+            <h3 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">
+              Stop trading blind.
+              <br className="hidden md:block" />
+              Start understanding what price is doing.
             </h3>
 
-            <p className="mx-auto mt-3 max-w-2xl text-white/80">
-              Get the PDF and use the context-first lens most retail traders never learn.
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/80 md:text-lg">
+              Get the Liquidity Guide and use the context-first lens most retail traders never
+              learn.
             </p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
               <StripeCheckoutButton className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-12 py-5 text-lg font-extrabold text-white shadow-sm transition hover:bg-blue-500">
-                Get the PDF — £25
+                Get the Liquidity Guide — £25
               </StripeCheckoutButton>
 
-              <a
+              <Link
                 href="/risk-disclaimer"
                 className="inline-flex items-center justify-center rounded-xl bg-white/10 px-12 py-5 text-lg font-semibold text-white ring-1 ring-white/30 backdrop-blur-sm transition hover:bg-white/15"
               >
                 Risk Disclaimer
-              </a>
+              </Link>
             </div>
 
             <p className="mt-4 text-xs text-white/70">
-              Trading involves risk. Educational content only. No guarantees.
+              Educational content only. Trading involves risk. No guarantees.
             </p>
           </div>
         </div>
       </div>
-
-      {/* Zoom Modal */}
-      {zoomSrc && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Preview zoom"
-          onClick={closeZoom}
-        >
-          <div
-            className="relative w-full max-w-4xl overflow-hidden rounded-2xl bg-white shadow-xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex items-center justify-between border-b border-slate-200 px-4 py-3">
-              <p className="text-sm font-semibold text-slate-900">
-                Preview (partial / watermarked)
-              </p>
-              <button
-                type="button"
-                onClick={closeZoom}
-                className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm font-semibold text-slate-700 hover:bg-slate-50"
-                aria-label="Close preview"
-              >
-                Close
-              </button>
-            </div>
-
-            <div className="relative aspect-[4/3] w-full bg-slate-100">
-              <Image
-                src={zoomSrc}
-                alt={zoomAlt}
-                fill
-                className="object-contain"
-                sizes="(max-width: 1024px) 100vw, 1024px"
-                priority
-              />
-            </div>
-
-            <div className="px-4 py-3">
-              <p className="text-xs text-slate-500">
-                Educational content only. Trading involves risk. No guarantees.
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }
