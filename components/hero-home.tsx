@@ -17,10 +17,10 @@ export default function HeroHome() {
       </div>
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="pt-10 pb-12 text-center md:pt-20 md:pb-16">
+        <div className="pt-8 pb-10 text-center md:pt-16 md:pb-12">
 
           {/* Headline */}
-          <h1 className="mx-auto max-w-4xl text-4xl font-extrabold tracking-tight text-white leading-[1.08] sm:text-5xl sm:leading-tight md:text-7xl">
+          <h1 className="mx-auto max-w-4xl text-3xl font-extrabold tracking-tight text-white leading-[1.12] sm:text-5xl md:text-6xl">
             What if your inconsistency isn’t because you’re undisciplined…
             <span className="hidden sm:inline">
               <br />
@@ -34,7 +34,7 @@ export default function HeroHome() {
           </h1>
 
           {/* Subhead */}
-          <div className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-white/85 sm:text-lg md:text-xl">
+          <div className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/85 sm:text-base md:text-lg">
             <p>
               <span className="font-semibold text-white">
                 You’re not “bad at trading.”
@@ -42,36 +42,17 @@ export default function HeroHome() {
               Most retail traders are taught the wrong game.
             </p>
 
-            <p className="mt-3">
-              Banks and institutions don’t trade indicators or signals.
-              <br className="hidden sm:block" />
+            <p className="mt-2">
+              Banks and institutions don’t trade indicators or signals —{" "}
               <span className="font-semibold text-white">
-                They trade structure and liquidity.
+                they trade structure and liquidity.
               </span>
             </p>
 
-            <p className="mt-3">
-              Once you understand where they position themselves,
-              <br className="hidden sm:block" />
-              <span className="font-extrabold text-white">
-                you stop blaming yourself — and start seeing the market differently.
-              </span>
+            <p className="mt-2 font-semibold text-white">
+              Once you understand where they position themselves, you stop
+              blaming yourself — and start seeing the market differently.
             </p>
-          </div>
-
-          {/* Trust/clarity pills */}
-          <div className="mx-auto mt-5 flex max-w-3xl flex-wrap items-center justify-center gap-2 text-sm text-white/85 sm:gap-3">
-            <div className="rounded-xl border border-white/15 bg-white/5 px-3 py-2 shadow-sm backdrop-blur sm:px-4">
-              <span className="font-extrabold text-white">Instant</span> PDF access
-            </div>
-
-            <div className="rounded-xl border border-white/15 bg-white/5 px-3 py-2 shadow-sm backdrop-blur sm:px-4">
-              <span className="font-extrabold text-white">No indicators.</span> No signals.
-            </div>
-
-            <div className="rounded-xl border border-white/15 bg-white/5 px-3 py-2 shadow-sm backdrop-blur sm:px-4">
-              <span className="font-extrabold text-white">Secure</span> Stripe checkout
-            </div>
           </div>
 
           {/* CTA */}
@@ -86,6 +67,21 @@ export default function HeroHome() {
             >
               Risk disclaimer
             </Link>
+          </div>
+
+          {/* Trust pills */}
+          <div className="mx-auto mt-5 flex max-w-3xl flex-wrap items-center justify-center gap-2 text-xs text-white/85 sm:text-sm sm:gap-3">
+            <div className="rounded-xl border border-white/15 bg-white/5 px-3 py-1.5 shadow-sm backdrop-blur sm:px-4">
+              <span className="font-extrabold text-white">Instant</span> PDF access
+            </div>
+
+            <div className="rounded-xl border border-white/15 bg-white/5 px-3 py-1.5 shadow-sm backdrop-blur sm:px-4">
+              <span className="font-extrabold text-white">No indicators.</span> No signals
+            </div>
+
+            <div className="rounded-xl border border-white/15 bg-white/5 px-3 py-1.5 shadow-sm backdrop-blur sm:px-4">
+              <span className="font-extrabold text-white">Secure</span> Stripe checkout
+            </div>
           </div>
 
           <p className="mt-3 text-xs text-white/70">
