@@ -27,14 +27,14 @@ export default function HeroHome() {
 
           {/* Headline (recognition-first to match your ad) */}
           <h1 className="mx-auto mt-4 max-w-4xl text-4xl font-extrabold tracking-tight text-white leading-[1.08] sm:text-5xl sm:leading-tight md:text-7xl">
-            Why you keep getting stopped out…
+            “I believe that my inconsistency isn’t because I’m undisciplined or broken... 
             <span className="hidden sm:inline">
               <br />
             </span>{" "}
-            then watching price go{" "}
+            it’s because I’ve been trained to look at the{" "}
             <span className="font-black">
               <span className="bg-yellow-400/80 text-slate-950 px-2 py-1 rounded box-decoration-clone">
-                exactly where you predicted.
+                market the wrong way.”
               </span>
             </span>
           </h1>
@@ -42,11 +42,11 @@ export default function HeroHome() {
           {/* Subhead (relief + bridge to mechanism) */}
           <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-white/85 sm:text-lg md:text-xl">
             You’re not “bad at trading.” Most retail traders are taught the wrong game:{" "}
-            <span className="font-semibold text-white">entries first</span> instead of{" "}
-            <span className="font-semibold text-white">liquidity first</span>.
+            <span className="font-semibold text-white">By learning where banks place their trades</span> you can place {" "}
+            <span className="font-semibold text-white">your own trades where they do. </span>.
             <span className="font-extrabold text-white">
               {" "}
-              This PDF gives you the context-first framework so you stop trading blind.
+              This PDF allows you to stop blaming yourself. The retail trading method you learned is designed to lose.
             </span>
           </p>
 
