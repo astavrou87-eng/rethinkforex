@@ -58,11 +58,11 @@ const myths = [
   },
   {
     eyebrow: "Blowing an account is a rite of passage",
-    headline: "What if accounts are not blown because trading is inherently impossible?",
+    headline: "What if accounts are not blown because trading is difficult?",
     body: [
-      "What if they are blown because retail traders keep entering where institutions are exiting?",
+      "What if they are blown because the people you are trading against know where your stop orders are?",
       "When you understand where liquidity sits, you stop offering the exact liquidity other participants need.",
-      "You stop being the liquidity.",
+      "You stop being on the menu. You stop being the liquidity.",
     ],
   },
 ];
