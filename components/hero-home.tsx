@@ -96,13 +96,12 @@ export default function HeroHome() {
               <div className="rounded-2xl border border-white/10 bg-slate-900/80 p-5">
                 <div className="flex items-center justify-between border-b border-white/10 pb-4">
                   <div>
-                    <p className="text-xs uppercase tracking-[0.2em] text-white/50">
-                      Familiar pattern
-                    </p>
-                    <p className="mt-1 text-sm font-semibold text-white">
-                      Right idea. Wrong place. Same frustration.
-                    </p>
-                  </div>
+                   <p className="text-sm uppercase tracking-[0.18em] text-white/60">
+  Familiar pattern
+</p>
+<p className="mt-2 text-lg font-semibold text-white">
+  Right idea. Wrong place. Same frustration.
+</p>
 
                   <div className="rounded-full border border-amber-400/20 bg-amber-400/10 px-3 py-1 text-xs font-semibold text-amber-200">
                     Repeats
