@@ -130,8 +130,8 @@ export default function HeroHome() {
                     This is the point where most traders start doubting themselves.
                   </p>
                   <p className="mt-2 text-sm leading-6 text-cyan-100/80">
-                    Not because they are lazy or incapable — but because something
-                    important about price movement has never been explained properly.
+                    Not because they are lazy or incapable — but because some of the 
+                    most widely accepted ideas about price movement are simply wrong.
                   </p>
                 </div>
               </div>
