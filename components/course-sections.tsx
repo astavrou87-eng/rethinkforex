@@ -499,7 +499,7 @@ export default function CourseSections() {
             actually moves.
           </p>
 
-                <div className="mt-10">
+          <div className="mt-10">
             <StripeCheckoutButton className="inline-flex items-center justify-center rounded-2xl bg-cyan-500 px-10 py-5 text-lg font-extrabold text-slate-950 shadow-lg shadow-cyan-500/20 transition hover:bg-cyan-400">
               Secure Instant Access - £25
             </StripeCheckoutButton>
