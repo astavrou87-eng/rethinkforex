@@ -38,8 +38,8 @@ export default function HeroHome() {
                 Have you ever had that moment where you stare at the chart and think…
               </p>
 
-              <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur">
-                <p className="text-white">
+              <div className="rounded-2xl border border-cyan-400/20 bg-slate-900/70 p-6 shadow-[0_0_30px_rgba(34,211,238,0.08)] backdrop-blur">
+                <p className="text-lg font-medium text-white/95 leading-relaxed">
                   “I’m doing everything I should be doing…
                   <br />
                   but somehow I’m still losing?”
