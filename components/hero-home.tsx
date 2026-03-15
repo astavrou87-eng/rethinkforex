@@ -78,13 +78,12 @@ export default function HeroHome() {
                   priority
                 />
               </div>
-
-              <div className="border-t border-white/10 px-5 py-5 md:px-6">
-  <p className="text-base font-semibold uppercase tracking-[0.15em] text-cyan-300/80">
+<div className="border-t border-white/10 px-5 py-6 md:px-6">
+  <p className="text-sm font-semibold uppercase tracking-[0.15em] text-cyan-300">
     The frustration most traders know well
   </p>
 
-  <p className="mt-3 text-base leading-7 text-white/80">
+  <p className="mt-3 text-lg leading-8 text-white/85">
     Long hours. Serious effort. Real intention. Yet the same confusing cycle
     keeps repeating — being right on direction, but still losing the trade
     before the move happens.
