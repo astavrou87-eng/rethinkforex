@@ -381,8 +381,8 @@ export default function CourseSections() {
 
             <div className="rounded-[28px] border border-cyan-400/20 bg-cyan-400/10 p-7">
               <p className="text-lg leading-8 text-cyan-100/88">
-                It is the difference between trying to read a map upside down…
-                and finally turning it the right way.
+                It’s the difference between trying to drive using only the rear-view mirror…
+and finally looking through the windshield.
               </p>
               <p className="mt-6 leading-8 text-cyan-100/82">
                 You stop chasing price. You start seeing where real moves begin.
