@@ -51,7 +51,7 @@ const myths = [
     eyebrow: "Psychology and discipline are why traders fail",
     headline: "Psychology matters. But chaos creates emotional reactions.",
     body: [
-      "Therefore if your map of the market is wrong, discipline alone cannot fix that.",
+      "Therefore if your map of the market is wrong, the very trading system you are using is wrong, discipline alone cannot fix that.",
       "When you understand where liquidity sits, why price is moving there, and where larger participants are likely entering and exiting, uncertainty drops.",
       "Sound hard? Actually its simple. That is when discipline becomes easier — because you finally have context.",
     ],
