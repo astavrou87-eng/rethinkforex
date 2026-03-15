@@ -43,7 +43,7 @@ const myths = [
     headline: "You’re right that retail traders are being targeted.",
     body: [
       "But what if feels rigged because price doesn’t move the way we think it does?",
-      "What if price is moving toward liquidity — and retail traders unknowingly create it trading in the same direction?",
+      "What if price is moving toward liquidity — and retail traders unknowingly create it?",
       "Here's why. Large institutions need liquidity to execute size. Retail traders tend to place orders in obvious areas. Price is drawn to those areas because that is where large orders can be filled.",
     ],
   },
@@ -51,9 +51,9 @@ const myths = [
     eyebrow: "Psychology and discipline are why traders fail",
     headline: "Psychology matters. But chaos creates emotional reactions.",
     body: [
-      "If your map of the market is wrong, discipline alone cannot fix that.",
-      "When you understand where liquidity sits, why price is moving there, and where larger participants are likely exiting, uncertainty drops.",
-      "That is when discipline becomes easier — because you finally have context.",
+      "Therefore if your map of the market is wrong, discipline alone cannot fix that.",
+      "When you understand where liquidity sits, why price is moving there, and where larger participants are likely entering and exiting, uncertainty drops.",
+      "Sound hard? Actually its simple. That is when discipline becomes easier — because you finally have context.",
     ],
   },
   {
