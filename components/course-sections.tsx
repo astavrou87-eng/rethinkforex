@@ -186,7 +186,7 @@ export default function CourseSections() {
         </div>
       </section>
 
-      {/* LIQUIDITY REVEAL */}
+        {/* LIQUIDITY REVEAL */}
       <section className="relative border-b border-white/10">
         <div
           className="pointer-events-none absolute inset-0 -z-10"
@@ -196,57 +196,56 @@ export default function CourseSections() {
         </div>
 
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-28">
-          <div className="grid items-start gap-10 md:grid-cols-12">
-            <div className="md:col-span-7">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300/80">
-                The missing piece most traders never learn
+          <div className="mx-auto max-w-4xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300/80">
+              The missing piece most traders never learn
+            </p>
+
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white md:text-5xl">
+              The market runs on liquidity
+            </h2>
+
+            <div className="mt-8 space-y-5 text-lg leading-8 text-white/76">
+              <p>Institutions must find liquidity to place large trades.</p>
+              <p>Retail traders unknowingly create that liquidity.</p>
+              <p>Price moves to those areas.</p>
+              <p>Professionals trade there.</p>
+              <p>Retail gets stopped out there.</p>
+            </div>
+
+            <div className="mt-8 rounded-3xl border border-cyan-400/20 bg-cyan-400/10 p-6 md:p-8">
+              <p className="text-lg font-semibold text-white">
+                Think in opposites.
               </p>
-              <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white md:text-5xl">
-                The market runs on liquidity
-              </h2>
+              <p className="mt-3 leading-8 text-cyan-100/85">
+                For someone to buy, someone must be willing to sell. For
+                someone to sell, someone must be willing to buy. Once you start
+                looking at price that way, market movement begins to make more
+                sense.
+              </p>
+            </div>
+          </div>
 
-              <div className="mt-8 space-y-5 text-lg leading-8 text-white/76">
-                <p>Institutions must find liquidity to place large trades.</p>
-                <p>Retail traders unknowingly create that liquidity.</p>
-                <p>Price moves to those areas.</p>
-                <p>Professionals trade there.</p>
-                <p>Retail gets stopped out there.</p>
-              </div>
+          <div className="mx-auto mt-12 max-w-5xl">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300/75">
+              Visual example
+            </p>
 
-              <div className="mt-8 rounded-3xl border border-cyan-400/20 bg-cyan-400/10 p-6">
-                <p className="text-lg font-semibold text-white">
-                  Think in opposites.
-                </p>
-                <p className="mt-3 leading-8 text-cyan-100/85">
-                  For someone to buy, someone must be willing to sell. For
-                  someone to sell, someone must be willing to buy. Once you start
-                  looking at price that way, market movement begins to make more
-                  sense.
-                </p>
+            <div className="overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.04] p-3 shadow-2xl backdrop-blur md:p-4">
+              <div className="overflow-hidden rounded-2xl border border-white/10 bg-slate-950/70">
+                <img
+                  src="/images/EXAMPLE22.png"
+                  alt="Annotated liquidity chart showing retail stop orders and institutional price movement"
+                  className="block h-auto w-full object-contain"
+                />
               </div>
             </div>
 
-            <div className="md:col-span-5">
-              <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.04] p-4 shadow-2xl backdrop-blur">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300/75">
-                  Visual example
-                </p>
-
-                <div className="overflow-hidden rounded-2xl border border-white/10 bg-slate-950/70">
-                  <img
-                    src="/images/EXAMPLE22.png"
-                    alt="Annotated liquidity chart showing retail stop orders and institutional price movement"
-                    className="block h-auto w-full object-contain"
-                  />
-                </div>
-
-                <p className="mt-4 text-sm leading-7 text-white/70">
-                  Retail traders often cluster stops and entries around obvious
-                  levels. Institutions need liquidity to transact size, so price
-                  is often drawn into those areas before the real move expands.
-                </p>
-              </div>
-            </div>
+            <p className="mt-5 max-w-4xl text-base leading-8 text-white/70">
+              Retail traders often cluster stops and entries around obvious
+              levels. Institutions need liquidity to transact size, so price is
+              often drawn into those areas before the real move expands.
+            </p>
           </div>
 
           <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-3">
