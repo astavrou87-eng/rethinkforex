@@ -492,7 +492,7 @@ export default function CourseSections() {
             Final step
           </p>
           <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white md:text-5xl">
-            Secure Instant Access (PayPal or Card)
+            Access The Liquidity Framework
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/75">
             A 48-page market understanding guide that shows you how price
