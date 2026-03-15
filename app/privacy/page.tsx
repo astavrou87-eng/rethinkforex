@@ -1,12 +1,16 @@
+import Link from "next/link";
+
 export const metadata = {
   title: "Privacy Policy | Rethink Forex",
 };
 
 export default function PrivacyPage() {
   return (
-    <main className="min-h-screen bg-white">
-      <div className="mx-auto max-w-4xl px-4 py-16">
-        <h1 className="text-3xl font-bold tracking-tight">Privacy Policy</h1>
+    <main className="min-h-screen bg-white text-slate-900">
+      <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 md:py-20">
+        <h1 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+          Privacy Policy
+        </h1>
 
         <div className="prose prose-slate mt-8 max-w-none">
           <p>
@@ -22,7 +26,12 @@ export default function PrivacyPage() {
           <p>
             We do not sell your personal data. If you would like your data removed or have any
             privacy questions, contact us at{" "}
-            <a href="mailto:support@rethinkforex.co.uk">support@rethinkforex.co.uk</a>.
+            <a
+              href="mailto:support@rethinkforex.co.uk"
+              className="underline decoration-slate-300 underline-offset-2 hover:decoration-slate-500"
+            >
+              support@rethinkforex.co.uk
+            </a>.
           </p>
 
           <hr />
@@ -33,9 +42,12 @@ export default function PrivacyPage() {
         </div>
 
         <div className="mt-10">
-          <a className="underline" href="/">
+          <Link
+            href="/"
+            className="font-medium text-slate-700 underline decoration-slate-300 underline-offset-4 transition hover:text-slate-900 hover:decoration-slate-500"
+          >
             Back to homepage
-          </a>
+          </Link>
         </div>
       </div>
     </main>
