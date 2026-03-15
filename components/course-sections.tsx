@@ -122,7 +122,7 @@ export default function CourseSections() {
             {[
               "You study hard but still lose the trade.",
               "You keep trying to solve it through trial and error.",
-              "You suspect there is a piece of the puzzle nobody explained properly.",
+              "You suspect there is a piece of the puzzle nobody has or wants to reveal to you.",
             ].map((item) => (
               <div
                 key={item}

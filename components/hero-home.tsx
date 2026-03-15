@@ -46,12 +46,12 @@ export default function HeroHome() {
               </div>
 
               <p>
-                You study. You test. You try to improve. You follow what mainstream
+                You study online content. You watch YouTube gurus for days. Back test every indicator and news event. You follow what mainstream
                 trading education tells you to focus on.
               </p>
 
               <p>
-                And yet somehow, you enter a trade, price moves against you first,
+                And yet somehow, you enter a perfect trade setup, price moves against within minutes,
                 your stop gets hit — and then the market goes the direction you expected.
               </p>
 
@@ -83,9 +83,7 @@ export default function HeroHome() {
                 </p>
 
                 <p className="mt-3 text-lg leading-8 text-white/85">
-                  Long hours. Serious effort. Real intention. Yet the same confusing cycle
-                  keeps repeating — being right on direction, but still losing the trade
-                  before the move happens.
+                  You are spending hours in front of your screen studying price charts. You are working harder than anyone you know to succeed and figure out something most people fail at. Years of explaining to the people around you that you have a plan.
                 </p>
               </div>
             </div>
