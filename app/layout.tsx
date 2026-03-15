@@ -10,9 +10,9 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Rethink Forex | PDF Course",
+  title: "Rethink Forex | Understand How Price Actually Moves",
   description:
-    "Rethink Forex is a practical PDF course designed to help retail traders trade with clarity, structure, and consistency.",
+    "A modern market education page built around the real question serious traders ask: why can you be right on direction and still lose before the move happens?",
 };
 
 export default function RootLayout({
@@ -52,7 +52,7 @@ export default function RootLayout({
       </head>
 
       <body
-        className={`${inter.variable} bg-gray-50 font-inter tracking-tight text-gray-900 antialiased`}
+        className={`${inter.variable} bg-slate-950 font-inter tracking-tight text-white antialiased`}
       >
         <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip">
           {children}

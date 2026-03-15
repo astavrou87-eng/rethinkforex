@@ -3,314 +3,535 @@
 import Link from "next/link";
 import StripeCheckoutButton from "@/components/stripe-checkout-button";
 
+const authorityTestimonials = [
+  {
+    title: "The Trader Who Stopped Guessing",
+    quote:
+      "For years I thought trading was about finding the perfect setup. New indicators. New strategies. Eventually I realised the problem wasn’t the setup — it was where I was looking. Once I understood where liquidity sits and why price moves toward it, I stopped guessing.",
+  },
+  {
+    title: "The Trader Who Simplified",
+    quote:
+      "My charts used to be full of indicators. I was constantly changing strategies trying to find something that worked. The breakthrough came when I stripped everything back and focused on one thing — liquidity.",
+  },
+  {
+    title: "The Trader Who Found Calm",
+    quote:
+      "The biggest change for me wasn’t profits. It was calm. Before that, every trade felt like a guess. Once I understood how liquidity drives price movement, the chaos disappeared.",
+  },
+];
+
+const customerTestimonials = [
+  {
+    quote:
+      "For years I felt like the market was playing tricks on me. My stop would get hit… then price moved exactly where I expected. Learning about liquidity was the first time trading actually made sense.",
+  },
+  {
+    quote:
+      "I tried indicators, strategies, and YouTube systems for almost 3 years. Nothing stuck. Once I understood where liquidity sits, my charts finally started looking clear instead of confusing.",
+  },
+  {
+    quote:
+      "The biggest change wasn’t a new strategy. It was finally understanding why price moves. I stopped chasing trades and started seeing where the real moves begin.",
+  },
+];
+
+const myths = [
+  {
+    eyebrow: "The market is rigged",
+    headline: "You’re right that retail traders keep getting caught.",
+    body: [
+      "But what if that doesn’t mean the market is random or impossible to understand?",
+      "What if price is moving toward liquidity — and retail traders unknowingly create it?",
+      "Large institutions need liquidity to execute size. Retail traders tend to place orders in obvious areas. Price is drawn to those areas because that is where large orders can be filled.",
+    ],
+  },
+  {
+    eyebrow: "Psychology and discipline are why traders fail",
+    headline: "Psychology matters. But chaos creates emotional reactions.",
+    body: [
+      "If your map of the market is wrong, discipline alone cannot fix that.",
+      "When you understand where liquidity sits, why price is moving there, and where larger participants are likely exiting, uncertainty drops.",
+      "That is when discipline becomes easier — because you finally have context.",
+    ],
+  },
+  {
+    eyebrow: "Blowing an account is a rite of passage",
+    headline: "What if accounts are not blown because trading is inherently impossible?",
+    body: [
+      "What if they are blown because retail traders keep entering where institutions are exiting?",
+      "When you understand where liquidity sits, you stop offering the exact liquidity other participants need.",
+      "You stop being the liquidity.",
+    ],
+  },
+];
+
+const faqItems = [
+  {
+    q: "How do I receive the guide?",
+    a: "Immediately after checkout. You’ll get access to the PDF straight away.",
+  },
+  {
+    q: "Is this a strategy pack or signal service?",
+    a: "No. This is a market understanding guide focused on how price moves, how liquidity functions, and how to stop reading the market through the usual retail lens.",
+  },
+  {
+    q: "Do I need indicators?",
+    a: "No. The framework is built around understanding price movement and liquidity rather than stacking indicators.",
+  },
+  {
+    q: "Is this beginner-friendly?",
+    a: "Yes. It is written to be clear and practical, while still being useful for traders who have already spent years trying to make sense of the market.",
+  },
+  {
+    q: "Do you guarantee profits?",
+    a: "No. This is educational material only. Trading involves risk, and nothing here is a promise of returns.",
+  },
+];
+
 export default function CourseSections() {
   return (
-    <section className="relative bg-slate-50">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="py-16 md:py-24">
-          {/* =========================
-              WHY BUY THIS
-             ========================= */}
-          <div className="mx-auto max-w-5xl rounded-3xl border border-slate-200 bg-white p-8 shadow-sm md:p-12">
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="text-sm font-semibold uppercase tracking-wide text-blue-700/80">
-                Why traders buy this guide
-              </p>
-
-              <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 md:text-5xl">
-                Because staying confused is expensive
-              </h2>
-
-              <p className="mt-5 text-base leading-relaxed text-slate-600 md:text-lg">
-                Most traders don’t fail because they’re lazy or stupid.
-                <br className="hidden md:block" />
-                They fail because they keep trying to fix execution…
-                <span className="font-semibold text-slate-900">
-                  {" "}
-                  when the real problem is how they’re reading the market.
-                </span>
-              </p>
-            </div>
-
-            <div className="mt-10 grid gap-6 md:grid-cols-3">
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-                <h3 className="text-lg font-extrabold text-slate-900">
-                  Stop blaming yourself
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                  If you’re often right about direction but still losing, the issue may not be
-                  discipline.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-                <h3 className="text-lg font-extrabold text-slate-900">
-                  Understand what’s really happening
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                  Learn why price often takes retail traders out first, then moves in the expected
-                  direction.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-                <h3 className="text-lg font-extrabold text-slate-900">
-                  Get a clearer lens
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                  Replace random-feeling outcomes with a context-first way of reading price.
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-10 text-center">
-              <StripeCheckoutButton className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-10 py-4 text-base font-extrabold text-white shadow-sm transition hover:bg-blue-500">
-                Get Instant Access — £25
-              </StripeCheckoutButton>
-
-              <p className="mt-3 text-sm text-slate-500">
-                Instant PDF access. One-time purchase.
+    <main className="bg-slate-950 text-white">
+      {/* PAIN / RECOGNITION */}
+      <section className="relative border-b border-white/10">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-24">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300/80">
+              Recognition
+            </p>
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white md:text-5xl">
+              If that sounds familiar, you’re not alone
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-white/72">
+              Most traders already know about risk management, indicators, price
+              action, support and resistance, and trading psychology. Yet despite
+              all that, many still lose money — which leads almost every serious
+              trader to the same question sooner or later:
+            </p>
+            <div className="mt-8 rounded-3xl border border-white/10 bg-white/[0.04] px-6 py-8 backdrop-blur">
+              <p className="text-2xl font-extrabold text-white md:text-4xl">
+                “What am I missing?”
               </p>
             </div>
           </div>
 
-          {/* =========================
-              WHAT YOU’LL LEARN
-             ========================= */}
-          <div className="mx-auto mt-16 max-w-5xl rounded-3xl border border-slate-200 bg-white p-8 shadow-sm md:p-12">
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="text-sm font-semibold uppercase tracking-wide text-blue-700/80">
-                What you’ll learn
+          <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-3">
+            {[
+              "You study hard but still lose the trade.",
+              "You keep trying to solve it through trial and error.",
+              "You suspect there is a piece of the puzzle nobody explained properly.",
+            ].map((item) => (
+              <div
+                key={item}
+                className="rounded-3xl border border-white/10 bg-white/[0.04] p-6"
+              >
+                <p className="text-base leading-7 text-white/78">{item}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mx-auto mt-10 max-w-4xl rounded-3xl border border-cyan-400/20 bg-cyan-400/10 p-6 md:p-8">
+            <p className="text-lg leading-8 text-cyan-100/90">
+              Some traders spend hundreds on courses, monthly communities, and
+              years on trial and error — all trying to answer one question:
+              <span className="font-semibold text-white">
+                {" "}
+                why does price move the way it does?
+              </span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* BELIEF BREAKDOWN */}
+      <section className="border-b border-white/10 bg-slate-900/60">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-24">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300/80">
+              Belief shift
+            </p>
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white md:text-5xl">
+              The explanations most traders get are incomplete
+            </h2>
+          </div>
+
+          <div className="mt-12 space-y-6">
+            {myths.map((item) => (
+              <div
+                key={item.eyebrow}
+                className="rounded-[28px] border border-white/10 bg-white/[0.04] p-6 md:p-8"
+              >
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300/75">
+                  {item.eyebrow}
+                </p>
+                <h3 className="mt-3 text-2xl font-extrabold tracking-tight text-white md:text-3xl">
+                  {item.headline}
+                </h3>
+
+                <div className="mt-5 grid gap-4 md:grid-cols-3">
+                  {item.body.map((paragraph) => (
+                    <div
+                      key={paragraph}
+                      className="rounded-2xl border border-white/8 bg-slate-950/70 p-5"
+                    >
+                      <p className="text-sm leading-7 text-white/75">
+                        {paragraph}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* LIQUIDITY REVEAL */}
+      <section className="relative border-b border-white/10">
+        <div
+          className="pointer-events-none absolute inset-0 -z-10"
+          aria-hidden="true"
+        >
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(34,211,238,0.08),_transparent_40%)]" />
+        </div>
+
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-28">
+          <div className="grid items-start gap-10 md:grid-cols-12">
+            <div className="md:col-span-7">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300/80">
+                The missing piece most traders never learn
               </p>
+              <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white md:text-5xl">
+                The market runs on liquidity
+              </h2>
 
-              <h3 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl">
-                What’s inside the PDF
-              </h3>
+              <div className="mt-8 space-y-5 text-lg leading-8 text-white/76">
+                <p>Institutions must find liquidity to place large trades.</p>
+                <p>Retail traders unknowingly create that liquidity.</p>
+                <p>Price moves to those areas.</p>
+                <p>Professionals trade there.</p>
+                <p>Retail gets stopped out there.</p>
+              </div>
 
-              <p className="mt-5 text-base leading-relaxed text-slate-600 md:text-lg">
-                This isn’t another strategy pack or indicator system.
-                <br className="hidden md:block" />
-                It’s a practical explanation of how price behaves when large participants need
-                liquidity.
+              <div className="mt-8 rounded-3xl border border-cyan-400/20 bg-cyan-400/10 p-6">
+                <p className="text-lg font-semibold text-white">
+                  Think in opposites.
+                </p>
+                <p className="mt-3 leading-8 text-cyan-100/85">
+                  For someone to buy, someone must be willing to sell. For
+                  someone to sell, someone must be willing to buy. Once you start
+                  looking at price that way, market movement begins to make more
+                  sense.
+                </p>
+              </div>
+            </div>
+
+            <div className="md:col-span-5">
+              <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-5 shadow-2xl backdrop-blur">
+                <div className="rounded-2xl border border-white/10 bg-slate-950/80 p-5">
+                  <p className="text-xs uppercase tracking-[0.2em] text-white/50">
+                    Visual explanation block
+                  </p>
+                  <h3 className="mt-2 text-xl font-bold text-white">
+                    Add your annotated liquidity image here
+                  </h3>
+                  <div className="mt-5 rounded-2xl border border-dashed border-cyan-300/30 bg-cyan-400/5 p-6">
+                    <div className="space-y-4">
+                      <div className="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white/75">
+                        Retail entries cluster around obvious levels
+                      </div>
+                      <div className="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white/75">
+                        Stops and targets create visible liquidity pools
+                      </div>
+                      <div className="rounded-xl border border-cyan-400/20 bg-cyan-400/10 px-4 py-3 text-sm font-semibold text-cyan-100">
+                        Institutions need those orders to transact size
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-5 grid gap-3">
+                    <div className="rounded-xl border border-white/8 bg-white/[0.03] p-4">
+                      <p className="text-xs uppercase tracking-wide text-white/45">
+                        Suggested asset
+                      </p>
+                      <p className="mt-1 text-sm text-white/78">
+                        Chart screenshot with stop clusters and sweep marked up
+                      </p>
+                    </div>
+                    <div className="rounded-xl border border-white/8 bg-white/[0.03] p-4">
+                      <p className="text-xs uppercase tracking-wide text-white/45">
+                        Suggested asset
+                      </p>
+                      <p className="mt-1 text-sm text-white/78">
+                        Simple table comparing retail thinking vs liquidity thinking
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-3">
+            {[
+              {
+                title: "What retail sees",
+                text: "A breakout, a reversal, a signal, a pattern.",
+              },
+              {
+                title: "What professionals need",
+                text: "Enough opposing orders to enter or exit meaningful size.",
+              },
+              {
+                title: "What changes for you",
+                text: "You stop chasing candles and start asking where liquidity is likely sitting.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="rounded-3xl border border-white/10 bg-white/[0.04] p-6"
+              >
+                <p className="text-sm font-semibold uppercase tracking-wide text-cyan-300/75">
+                  {item.title}
+                </p>
+                <p className="mt-3 text-base leading-7 text-white/76">
+                  {item.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* AUTHORITY TESTIMONIALS */}
+      <section className="border-b border-white/10 bg-slate-900/70">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-24">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300/80">
+              Authority testimonials
+            </p>
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white md:text-5xl">
+              What changes when traders stop looking in the usual places
+            </h2>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {authorityTestimonials.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-[28px] border border-white/10 bg-white/[0.04] p-6"
+              >
+                <p className="text-sm font-semibold uppercase tracking-wide text-cyan-300/75">
+                  {item.title}
+                </p>
+                <p className="mt-4 leading-8 text-white/76">“{item.quote}”</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CUSTOMER TESTIMONIALS */}
+      <section className="border-b border-white/10">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-24">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300/80">
+              Customer feedback
+            </p>
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white md:text-5xl">
+              The shift traders keep describing
+            </h2>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {customerTestimonials.map((item, index) => (
+              <div
+                key={index}
+                className="rounded-[28px] border border-white/10 bg-white/[0.04] p-6"
+              >
+                <div className="mb-4 text-sm tracking-[0.2em] text-amber-300">
+                  ★★★★★
+                </div>
+                <p className="leading-8 text-white/76">“{item.quote}”</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* LIFE AFTER */}
+      <section className="border-b border-white/10 bg-slate-900/60">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-28">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300/80">
+              Life after understanding liquidity
+            </p>
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white md:text-5xl">
+              Trading becomes calmer when the market finally makes sense
+            </h2>
+          </div>
+
+          <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-2">
+            <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-7">
+              <p className="text-lg leading-8 text-white/76">
+                Most traders try to solve trading by adding more:
+              </p>
+              <ul className="mt-5 space-y-3 text-base text-white/76">
+                <li>• More indicators</li>
+                <li>• More strategies</li>
+                <li>• More complicated rules</li>
+              </ul>
+              <p className="mt-6 leading-8 text-white/76">
+                But understanding liquidity does not add complexity.
+                <span className="font-semibold text-white"> It removes it.</span>
               </p>
             </div>
 
-            <div className="mt-10 grid gap-4 md:grid-cols-2">
+            <div className="rounded-[28px] border border-cyan-400/20 bg-cyan-400/10 p-7">
+              <p className="text-lg leading-8 text-cyan-100/88">
+                It is the difference between trying to read a map upside down…
+                and finally turning it the right way.
+              </p>
+              <p className="mt-6 leading-8 text-cyan-100/82">
+                You stop chasing price. You start seeing where real moves begin.
+                Trading feels calmer not because the market changed — but because
+                you finally understand what it is doing.
+              </p>
+            </div>
+          </div>
+
+          <div className="mx-auto mt-10 max-w-4xl text-center">
+            <p className="text-lg leading-8 text-white/76">
+              At that point, you are no longer just another trader trying to
+              guess the next move. You become the trader who sees what others
+              miss — and that shift carries far beyond the charts.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* OFFER REVEAL */}
+      <section className="border-b border-white/10">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-24">
+          <div className="mx-auto max-w-4xl rounded-[32px] border border-white/10 bg-white/[0.04] p-8 text-center shadow-2xl backdrop-blur md:p-12">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300/80">
+              The offer
+            </p>
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white md:text-5xl">
+              48-Page Market Intelligence Guide
+            </h2>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/75">
+              A focused guide built to help traders understand how price
+              actually moves, why liquidity matters, and why so much retail
+              trading education leaves people stuck.
+            </p>
+
+            <div className="mx-auto mt-10 grid max-w-4xl gap-4 md:grid-cols-2">
               {[
-                "How institutions build positions in stages (often largest first).",
-                "Why price returns to certain zones when positions aren’t fully built.",
-                "Why moves often begin by consuming retail liquidity first.",
-                "How to identify likely institutional interest zones.",
-                "How profit-taking can appear through structure shifts and larger retracements.",
-                "How to stop chasing entries and start waiting for better context.",
+                "A clearer explanation of why you can be right on direction and still lose the trade",
+                "A practical framework for understanding liquidity and institutional context",
+                "A simpler lens for reading market behaviour without relying on more noise",
+                "A resource designed to shorten years of confusion into one structured shift",
               ].map((item) => (
                 <div
                   key={item}
-                  className="rounded-2xl border border-slate-200 bg-slate-50 p-5"
+                  className="rounded-2xl border border-white/10 bg-slate-950/70 p-5 text-left"
                 >
-                  <div className="flex gap-3">
-                    <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-blue-600" />
-                    <p className="text-sm leading-relaxed text-slate-700">{item}</p>
-                  </div>
+                  <p className="text-sm leading-7 text-white/78">{item}</p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <StripeCheckoutButton className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-extrabold text-white shadow-sm transition hover:bg-blue-500">
-                Get Instant Access — £25
-              </StripeCheckoutButton>
+            <div className="mt-10 rounded-2xl border border-white/10 bg-slate-950/80 px-6 py-5">
+              <p className="text-sm uppercase tracking-[0.2em] text-white/45">
+                Positioning line
+              </p>
+              <p className="mt-2 text-lg font-semibold text-white">
+                Don’t spend the next five or ten years trying to figure this out
+                through trial and error.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              <Link
-                href="/risk-disclaimer"
-                className="text-sm font-semibold text-slate-700 underline decoration-slate-300 underline-offset-4 hover:decoration-slate-500"
+      {/* FAQ / SUPPORTING DETAIL */}
+      <section className="border-b border-white/10 bg-slate-900/70">
+        <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 md:py-24">
+          <div className="text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300/80">
+              Common questions
+            </p>
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white md:text-5xl">
+              A few practical details
+            </h2>
+          </div>
+
+          <div className="mt-12 space-y-4">
+            {faqItems.map((item) => (
+              <details
+                key={item.q}
+                className="group rounded-2xl border border-white/10 bg-white/[0.04] p-6"
               >
-                Risk disclaimer
-              </Link>
-            </div>
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-white">
+                  <span>{item.q}</span>
+                  <span className="text-cyan-300 transition group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+                <p className="mt-4 leading-8 text-white/72">{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <p className="mt-3 text-center text-xs text-slate-500">
-              Educational content only. Trading involves risk. No guarantees.
-            </p>
+      {/* FINAL CTA */}
+      <section className="relative">
+        <div
+          className="pointer-events-none absolute inset-0 -z-10"
+          aria-hidden="true"
+        >
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(34,211,238,0.10),_transparent_40%)]" />
+        </div>
+
+        <div className="mx-auto max-w-5xl px-4 py-16 text-center sm:px-6 md:py-28">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300/80">
+            Final step
+          </p>
+          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white md:text-5xl">
+            Access The Liquidity Framework
+          </h2>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/75">
+            A 48-page market understanding guide that shows you how price
+            actually moves.
+          </p>
+
+          <div className="mt-10">
+            <StripeCheckoutButton className="inline-flex items-center justify-center rounded-2xl bg-cyan-500 px-10 py-5 text-lg font-extrabold text-slate-950 shadow-lg shadow-cyan-500/20 transition hover:bg-cyan-400">
+              Access The Liquidity Framework — £25
+            </StripeCheckoutButton>
           </div>
 
-          {/* =========================
-              GUARANTEE
-             ========================= */}
-          <div className="mx-auto mt-12 max-w-5xl rounded-3xl border border-blue-100 bg-blue-50 p-8 shadow-sm md:p-10">
-            <div className="mx-auto max-w-3xl text-center">
-              <h3 className="text-2xl font-bold text-blue-950">Simple make-it-right guarantee</h3>
-              <p className="mt-4 text-base leading-relaxed text-blue-900">
-                If you read the PDF and you don’t get at least one clear
-                <span className="font-semibold"> “that explains it” </span>
-                moment, email support and we’ll make it right.
-              </p>
-              <p className="mt-3 text-sm text-blue-900/80">
-                No profit guarantees. No trading advice. Just clear educational material.
-              </p>
-            </div>
-          </div>
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-white/62">
+            Join the traders who stopped guessing and started understanding how
+            the market actually moves.
+          </p>
 
-          {/* =========================
-              TESTIMONIALS
-             ========================= */}
-          <div className="mx-auto mt-16 max-w-5xl">
-            <div className="text-center">
-              <p className="text-sm font-semibold uppercase tracking-wide text-blue-700/80">
-                Proof
-              </p>
-              <h3 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl">
-                What traders are saying
-              </h3>
-              <p className="mt-4 text-base text-slate-600">
-                Feedback from traders using the Rethink Forex framework.
-              </p>
-            </div>
-
-            <div className="mt-10 grid gap-6 md:grid-cols-2">
-              {[
-                {
-                  quote:
-                    "The biggest shift was understanding why price returns to specific areas. Once I started marking zones and waiting for the return, my entries stopped feeling like guesses.",
-                  name: "James R.",
-                  title: "Retail Forex Trader",
-                },
-                {
-                  quote:
-                    "I finally understood what liquidity means in practical terms. Breakout failures started making sense, and I stopped treating every move as random.",
-                  name: "Andrew M.",
-                  title: "Prop-Firm Challenge Trader",
-                },
-                {
-                  quote:
-                    "The structure-shift section was the key for me. I can now spot when profit-taking is likely starting instead of holding through a stall and giving it back.",
-                  name: "Daniel K.",
-                  title: "Swing Trader",
-                },
-                {
-                  quote:
-                    "Most courses taught me entries. This taught me context. I take fewer trades now because I’m filtering for the areas where institutions actually need orders.",
-                  name: "Mark T.",
-                  title: "Independent Trader",
-                },
-              ].map((t) => (
-                <div
-                  key={t.name}
-                  className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
-                >
-                  <div className="mb-3 text-yellow-400">★★★★★</div>
-                  <p className="text-slate-700 leading-relaxed">“{t.quote}”</p>
-                  <div className="mt-4 font-semibold text-slate-900">{t.name}</div>
-                  <div className="text-sm text-slate-500">{t.title}</div>
-                </div>
-              ))}
-            </div>
-
-            <p className="mt-4 text-xs text-slate-500">
-              Testimonials are illustrative and may be anonymised.
-            </p>
-          </div>
-
-          {/* =========================
-              FAQ
-             ========================= */}
-          <div className="mx-auto mt-16 max-w-5xl">
-            <div className="text-center">
-              <p className="text-sm font-semibold uppercase tracking-wide text-blue-700/80">
-                FAQ
-              </p>
-              <h3 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl">
-                Common questions
-              </h3>
-            </div>
-
-            <div className="mt-10 space-y-4">
-              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                <p className="font-semibold text-slate-900">How do I receive the PDF?</p>
-                <p className="mt-2 text-slate-700">
-                  Immediately after checkout. You’ll receive confirmation and access right away. If
-                  anything goes wrong, email support and we’ll sort it quickly.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                <p className="font-semibold text-slate-900">Is this beginner-friendly?</p>
-                <p className="mt-2 text-slate-700">
-                  Yes. It’s written to be clear and practical. If you already trade, it will help
-                  you stop guessing and start filtering for context.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                <p className="font-semibold text-slate-900">Do I need indicators?</p>
-                <p className="mt-2 text-slate-700">
-                  No. This is about structure + liquidity context. If you currently use indicators,
-                  you may rely on them less once you understand price behaviour better.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                <p className="font-semibold text-slate-900">Do you guarantee profits?</p>
-                <p className="mt-2 text-slate-700">
-                  No. Trading involves risk. This is educational content designed to improve how
-                  you interpret price — not a promise of returns.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                <p className="font-semibold text-slate-900">What if I have questions?</p>
-                <p className="mt-2 text-slate-700">
-                  Email{" "}
-                  <a
-                    href="mailto:support@rethinkforex.co.uk"
-                    className="underline decoration-slate-300 underline-offset-2 hover:decoration-slate-500"
-                  >
-                    support@rethinkforex.co.uk
-                  </a>{" "}
-                  and we’ll help.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* =========================
-              FINAL CTA
-             ========================= */}
-          <div className="mx-auto mt-16 max-w-5xl rounded-3xl bg-slate-900 px-8 py-10 text-center text-white shadow-sm md:px-12 md:py-14">
-            <p className="text-sm font-semibold uppercase tracking-wide text-blue-300/80">
-              Final step
-            </p>
-
-            <h3 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">
-              Stop trading blind.
-              <br className="hidden md:block" />
-              Start understanding what price is doing.
-            </h3>
-
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/80 md:text-lg">
-              Get Instant Access and use the context-first lens most retail traders never
-              learn.
-            </p>
-
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
-              <StripeCheckoutButton className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-12 py-5 text-lg font-extrabold text-white shadow-sm transition hover:bg-blue-500">
-                Get Instant Access — £25
-              </StripeCheckoutButton>
-
-              <Link
-                href="/risk-disclaimer"
-                className="inline-flex items-center justify-center rounded-xl bg-white/10 px-12 py-5 text-lg font-semibold text-white ring-1 ring-white/30 backdrop-blur-sm transition hover:bg-white/15"
-              >
-                Risk Disclaimer
-              </Link>
-            </div>
-
-            <p className="mt-4 text-xs text-white/70">
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Link
+              href="/risk-disclaimer"
+              className="text-sm font-semibold text-white/80 underline decoration-white/20 underline-offset-4 hover:decoration-white/50"
+            >
+              Risk disclaimer
+            </Link>
+            <span className="hidden text-white/25 sm:inline">•</span>
+            <p className="text-sm text-white/55">
               Educational content only. Trading involves risk. No guarantees.
             </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
   );
 }

@@ -20,10 +20,12 @@ export default function DefaultLayout({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <>
+    <div className="flex min-h-screen flex-col">
       <Header />
-      <main className="grow">{children}</main>
+
+      <main className="flex-grow">{children}</main>
+
       <Footer border={true} />
-    </>
+    </div>
   );
 }
