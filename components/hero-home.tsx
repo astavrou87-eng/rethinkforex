@@ -93,7 +93,7 @@ export default function HeroHome() {
           </div>
 
           {/* Familiar pattern card below image */}
-          <div className="mx-auto mt-8 max-w-3xl">
+        <div className="mx-auto mt-10 max-w-5xl">
             <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-5 shadow-2xl backdrop-blur">
               <div className="rounded-2xl border border-white/10 bg-slate-900/80 p-5">
                 <div className="flex items-center justify-between border-b border-white/10 pb-4">
