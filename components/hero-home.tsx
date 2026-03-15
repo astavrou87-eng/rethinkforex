@@ -29,7 +29,7 @@ export default function HeroHome() {
             </h1>
 
             <p className="mt-6 max-w-3xl text-lg leading-8 text-white/75 sm:text-xl">
-              The one realization that finally shows you how the market actually moves.
+              The one realisation that finally shows you how the market actually moves.
             </p>
 
             <div className="mt-8 max-w-3xl space-y-5 text-base leading-8 text-white/72 sm:text-lg">
