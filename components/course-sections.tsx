@@ -227,47 +227,24 @@ export default function CourseSections() {
             </div>
 
             <div className="md:col-span-5">
-              <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-5 shadow-2xl backdrop-blur">
-                <div className="rounded-2xl border border-white/10 bg-slate-950/80 p-5">
-                  <p className="text-xs uppercase tracking-[0.2em] text-white/50">
-                    Visual explanation block
-                  </p>
-                  <h3 className="mt-2 text-xl font-bold text-white">
-                    Add your annotated liquidity image here
-                  </h3>
-                  <div className="mt-5 rounded-2xl border border-dashed border-cyan-300/30 bg-cyan-400/5 p-6">
-                    <div className="space-y-4">
-                      <div className="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white/75">
-                        Retail entries cluster around obvious levels
-                      </div>
-                      <div className="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white/75">
-                        Stops and targets create visible liquidity pools
-                      </div>
-                      <div className="rounded-xl border border-cyan-400/20 bg-cyan-400/10 px-4 py-3 text-sm font-semibold text-cyan-100">
-                        Institutions need those orders to transact size
-                      </div>
-                    </div>
-                  </div>
+              <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.04] p-4 shadow-2xl backdrop-blur">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300/75">
+                  Visual example
+                </p>
 
-                  <div className="mt-5 grid gap-3">
-                    <div className="rounded-xl border border-white/8 bg-white/[0.03] p-4">
-                      <p className="text-xs uppercase tracking-wide text-white/45">
-                        Suggested asset
-                      </p>
-                      <p className="mt-1 text-sm text-white/78">
-                        Chart screenshot with stop clusters and sweep marked up
-                      </p>
-                    </div>
-                    <div className="rounded-xl border border-white/8 bg-white/[0.03] p-4">
-                      <p className="text-xs uppercase tracking-wide text-white/45">
-                        Suggested asset
-                      </p>
-                      <p className="mt-1 text-sm text-white/78">
-                        Simple table comparing retail thinking vs liquidity thinking
-                      </p>
-                    </div>
-                  </div>
+                <div className="overflow-hidden rounded-2xl border border-white/10 bg-slate-950/70">
+                  <img
+                    src="/images/EXAMPLE22.png"
+                    alt="Annotated liquidity chart showing retail stop orders and institutional price movement"
+                    className="block h-auto w-full object-contain"
+                  />
                 </div>
+
+                <p className="mt-4 text-sm leading-7 text-white/70">
+                  Retail traders often cluster stops and entries around obvious
+                  levels. Institutions need liquidity to transact size, so price
+                  is often drawn into those areas before the real move expands.
+                </p>
               </div>
             </div>
           </div>
