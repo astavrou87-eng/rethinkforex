@@ -20,7 +20,7 @@ export default function PrivacyPage() {
 
           <p>
             If you purchase the course, payment is processed by PayPal. We may receive your name and
-            email address from PayPal so we can deliver the PDF and provide support.
+            email address from PayPal so we can deliver the 48-page market intelligence guide and provide support.
           </p>
 
           <p>

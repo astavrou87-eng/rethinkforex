@@ -11,7 +11,7 @@ export default function ThankYouPage() {
         </h1>
 
         <p className="mt-4 text-lg text-gray-700">
-          Your order is confirmed. We’ll email your PDF course to the address you
+          Your order is confirmed. We’ll email your 48-page market intelligence guide to the address you
           used at checkout.
         </p>
 

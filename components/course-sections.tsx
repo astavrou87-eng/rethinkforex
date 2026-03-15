@@ -70,7 +70,7 @@ const myths = [
 const faqItems = [
   {
     q: "How do I receive the guide?",
-    a: "Immediately after checkout. You’ll get access to the PDF straight away.",
+    a: "Immediately after checkout. You’ll get access to the 48-page market intelligence guide straight away.",
   },
   {
     q: "Is this a strategy pack or signal service?",

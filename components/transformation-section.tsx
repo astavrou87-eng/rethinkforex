@@ -113,7 +113,7 @@ export default function TransformationSection() {
               {/* CTA (now shared tracked component) */}
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <StripeCheckoutButton className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-extrabold text-white shadow-sm transition hover:bg-blue-500">
-                  Get the PDF — £25
+                  Get the 48-page market intelligence guide — £25
                 </StripeCheckoutButton>
 
                 <Link
@@ -125,7 +125,7 @@ export default function TransformationSection() {
               </div>
 
               <p className="mt-3 text-xs text-white/70">
-                Instant PDF access after checkout. Support:{" "}
+                Instant 48-page market intelligence guide access after checkout. Support:{" "}
                 <a
                   href="mailto:support@rethinkforex.co.uk"
                   className="underline decoration-white/30 underline-offset-2 hover:decoration-white/60"
