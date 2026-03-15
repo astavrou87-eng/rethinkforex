@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import StripeCheckoutButton from "@/components/stripe-checkout-button";
 
 const authorityTestimonials = [
@@ -90,6 +91,8 @@ const faqItems = [
 ];
 
 export default function CourseSections() {
+  const [isChartOpen, setIsChartOpen] = useState(false);
+
   return (
     <main className="bg-slate-950 text-white">
       {/* PAIN / RECOGNITION */}
@@ -186,7 +189,7 @@ export default function CourseSections() {
         </div>
       </section>
 
-        {/* LIQUIDITY REVEAL */}
+      {/* LIQUIDITY REVEAL */}
       <section className="relative border-b border-white/10">
         <div
           className="pointer-events-none absolute inset-0 -z-10"
@@ -232,20 +235,33 @@ export default function CourseSections() {
             </p>
 
             <div className="overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.04] p-3 shadow-2xl backdrop-blur md:p-4">
-              <div className="overflow-hidden rounded-2xl border border-white/10 bg-slate-950/70">
-                <img
-                  src="/images/EXAMPLE22.png"
-                  alt="Annotated liquidity chart showing retail stop orders and institutional price movement"
-                  className="block h-auto w-full object-contain"
-                />
-              </div>
-            </div>
+              <button
+                type="button"
+                onClick={() => setIsChartOpen(true)}
+                className="group block w-full text-left"
+                aria-label="Open chart image"
+              >
+                <div className="overflow-hidden rounded-2xl border border-white/10 bg-slate-950/70">
+                  <img
+                    src="/images/EXAMPLE22.png"
+                    alt="Annotated liquidity chart showing retail stop orders and institutional price movement"
+                    className="block h-auto w-full object-contain transition duration-300 group-hover:scale-[1.01]"
+                  />
+                </div>
 
-            <p className="mt-5 max-w-4xl text-base leading-8 text-white/70">
-              Retail traders often cluster stops and entries around obvious
-              levels. Institutions need liquidity to transact size, so price is
-              often drawn into those areas before the real move expands.
-            </p>
+                <div className="mt-4 flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+                  <p className="max-w-4xl text-base leading-8 text-white/70">
+                    Retail traders often cluster stops and entries around obvious
+                    levels. Institutions need liquidity to transact size, so price is
+                    often drawn into those areas before the real move expands.
+                  </p>
+
+                  <span className="shrink-0 rounded-full border border-white/10 bg-white/[0.05] px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-cyan-300/75">
+                    Click to zoom
+                  </span>
+                </div>
+              </button>
+            </div>
           </div>
 
           <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-3">
@@ -508,6 +524,35 @@ export default function CourseSections() {
           </div>
         </div>
       </section>
+
+      {isChartOpen && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/95 p-4 backdrop-blur-sm"
+          onClick={() => setIsChartOpen(false)}
+        >
+          <div
+            className="relative max-h-[92vh] w-full max-w-7xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setIsChartOpen(false)}
+              className="absolute right-3 top-3 z-10 rounded-full border border-white/10 bg-slate-900/90 px-3 py-2 text-sm font-semibold text-white transition hover:bg-slate-800"
+              aria-label="Close chart image"
+            >
+              ✕
+            </button>
+
+            <div className="overflow-hidden rounded-2xl border border-white/10 bg-slate-900 shadow-2xl">
+              <img
+                src="/images/EXAMPLE22.png"
+                alt="Annotated liquidity chart showing retail stop orders and institutional price movement"
+                className="block max-h-[92vh] w-full object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
