@@ -492,7 +492,7 @@ export default function CourseSections() {
             Final step
           </p>
           <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white md:text-5xl">
-            Access The Liquidity Framework
+            Start Seeing What Moves Price
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/75">
             A 48-page market understanding guide that shows you how price
@@ -501,7 +501,7 @@ export default function CourseSections() {
 
           <div className="mt-10">
             <StripeCheckoutButton className="inline-flex items-center justify-center rounded-2xl bg-cyan-500 px-10 py-5 text-lg font-extrabold text-slate-950 shadow-lg shadow-cyan-500/20 transition hover:bg-cyan-400">
-              Secure Instant Access (PayPal or Card) — £25
+              Secure Instant Access - £25
             </StripeCheckoutButton>
           </div>
 
