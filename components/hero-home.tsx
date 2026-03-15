@@ -66,80 +66,77 @@ export default function HeroHome() {
             </div>
           </div>
 
-          {/* Problem amplification row */}
-          <div className="mt-14 grid items-stretch gap-8 lg:grid-cols-12">
-            {/* Frustration image */}
-            <div className="lg:col-span-7">
-              <div className="overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.04] shadow-2xl backdrop-blur">
-                <div className="relative aspect-[16/10] w-full">
-                  <Image
-                    src="/images/trader-reflection.png"
-                    alt="Trader reflecting late at night while looking at charts"
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-                </div>
+          {/* Frustration image */}
+          <div className="mx-auto mt-14 max-w-5xl">
+            <div className="overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.04] shadow-2xl backdrop-blur">
+              <div className="relative aspect-[16/10] w-full">
+                <Image
+                  src="/images/trader-reflection.png"
+                  alt="Trader reflecting late at night while looking at charts"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
 
-                <div className="border-t border-white/10 px-5 py-4 md:px-6">
-                  <p className="text-sm uppercase tracking-[0.2em] text-cyan-300/75">
-                    The frustration most traders know well
-                  </p>
-                  <p className="mt-2 text-base leading-7 text-white/72">
-                    Long hours. Serious effort. Real intention. Yet the same
-                    confusing cycle keeps repeating — being right on direction,
-                    but still losing the trade before the move happens.
-                  </p>
-                </div>
+              <div className="border-t border-white/10 px-5 py-4 md:px-6">
+                <p className="text-sm uppercase tracking-[0.2em] text-cyan-300/75">
+                  The frustration most traders know well
+                </p>
+                <p className="mt-2 text-base leading-7 text-white/72">
+                  Long hours. Serious effort. Real intention. Yet the same
+                  confusing cycle keeps repeating — being right on direction,
+                  but still losing the trade before the move happens.
+                </p>
               </div>
             </div>
+          </div>
 
-            {/* Familiar pattern card */}
-            <div className="lg:col-span-5">
-              <div className="relative h-full overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-5 shadow-2xl backdrop-blur">
-                <div className="rounded-2xl border border-white/10 bg-slate-900/80 p-5">
-                  <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                    <div>
-                      <p className="text-xs uppercase tracking-[0.2em] text-white/50">
-                        Familiar pattern
-                      </p>
-                      <p className="mt-1 text-sm font-semibold text-white">
-                        Right idea. Wrong place. Same frustration.
-                      </p>
-                    </div>
-
-                    <div className="rounded-full border border-amber-400/20 bg-amber-400/10 px-3 py-1 text-xs font-semibold text-amber-200">
-                      Repeats
-                    </div>
-                  </div>
-
-                  <div className="mt-5 space-y-3">
-                    {[
-                      "Studies charts seriously",
-                      "Finds a setup that makes sense",
-                      "Enters with confidence",
-                      "Gets stopped out early",
-                      "Watches price move as expected",
-                    ].map((item, index) => (
-                      <div
-                        key={index}
-                        className="flex items-center justify-between rounded-xl border border-white/8 bg-white/[0.03] px-4 py-3"
-                      >
-                        <span className="text-sm text-white/80">{item}</span>
-                        <span className="text-xs text-white/40">Again</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="mt-5 rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-4">
-                    <p className="text-sm font-semibold text-cyan-200">
-                      This is the point where most traders start doubting themselves.
+          {/* Familiar pattern card below image */}
+          <div className="mx-auto mt-8 max-w-3xl">
+            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-5 shadow-2xl backdrop-blur">
+              <div className="rounded-2xl border border-white/10 bg-slate-900/80 p-5">
+                <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.2em] text-white/50">
+                      Familiar pattern
                     </p>
-                    <p className="mt-2 text-sm leading-6 text-cyan-100/80">
-                      Not because they are lazy or incapable — but because something
-                      important about price movement has never been explained properly.
+                    <p className="mt-1 text-sm font-semibold text-white">
+                      Right idea. Wrong place. Same frustration.
                     </p>
                   </div>
+
+                  <div className="rounded-full border border-amber-400/20 bg-amber-400/10 px-3 py-1 text-xs font-semibold text-amber-200">
+                    Repeats
+                  </div>
+                </div>
+
+                <div className="mt-5 space-y-3">
+                  {[
+                    "Studies charts seriously",
+                    "Finds a setup that makes sense",
+                    "Enters with confidence",
+                    "Gets stopped out early",
+                    "Watches price move as expected",
+                  ].map((item, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center justify-between rounded-xl border border-white/8 bg-white/[0.03] px-4 py-3"
+                    >
+                      <span className="text-sm text-white/80">{item}</span>
+                      <span className="text-xs text-white/40">Again</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-5 rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-4">
+                  <p className="text-sm font-semibold text-cyan-200">
+                    This is the point where most traders start doubting themselves.
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-cyan-100/80">
+                    Not because they are lazy or incapable — but because something
+                    important about price movement has never been explained properly.
+                  </p>
                 </div>
               </div>
             </div>
