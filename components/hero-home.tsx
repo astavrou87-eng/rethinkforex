@@ -83,7 +83,7 @@ export default function HeroHome() {
                 </p>
 
                 <p className="mt-3 text-lg leading-8 text-white/85">
-                  You are spending hours in front of your screen studying price charts. You are working harder than anyone you know to succeed and figure out something most people fail at. Years of explaining to the people around you that you have a plan.
+                  You are spending hours in front of your screen studying price charts. You are working harder than anyone you know to succeed and figure out something most people fail at. Tired of explaining to the people around you that you have a plan.
                 </p>
               </div>
             </div>

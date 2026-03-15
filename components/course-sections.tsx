@@ -40,11 +40,11 @@ const customerTestimonials = [
 const myths = [
   {
     eyebrow: "The market is rigged",
-    headline: "You’re right that retail traders keep getting caught.",
+    headline: "You’re right that retail traders are being targeted.",
     body: [
-      "But what if that doesn’t mean the market is random or impossible to understand?",
-      "What if price is moving toward liquidity — and retail traders unknowingly create it?",
-      "Large institutions need liquidity to execute size. Retail traders tend to place orders in obvious areas. Price is drawn to those areas because that is where large orders can be filled.",
+      "But what if feels rigged because price doesn’t move the way we think it does?",
+      "What if price is moving toward liquidity — and retail traders unknowingly create it trading in the same direction?",
+      "Here's why. Large institutions need liquidity to execute size. Retail traders tend to place orders in obvious areas. Price is drawn to those areas because that is where large orders can be filled.",
     ],
   },
   {
@@ -154,7 +154,7 @@ export default function CourseSections() {
               Belief shift
             </p>
             <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white md:text-5xl">
-              The explanations most traders get are incomplete
+              What If Some Of The Most Accepted Trading Beliefs Are Wrong?
             </h2>
           </div>
 
