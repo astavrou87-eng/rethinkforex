@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export default function HeroHome() {
   return (
     <section className="relative overflow-hidden border-b border-white/10 bg-slate-950">
@@ -13,15 +15,16 @@ export default function HeroHome() {
       </div>
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="grid min-h-[82vh] items-center gap-10 py-16 md:grid-cols-12 md:py-24">
-          <div className="md:col-span-7">
+        <div className="py-16 md:py-24">
+          {/* Headline block */}
+          <div className="mx-auto max-w-5xl">
             <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium tracking-wide text-white/70 backdrop-blur">
               For traders who feel like they’re missing something important
             </div>
 
-            <h1 className="mt-6 max-w-5xl text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl">
+            <h1 className="mt-6 text-4xl font-extrabold leading-[1.02] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
               Why Some Traders Quietly Start Making Consistent Money…
-              <span className="mt-3 block text-white/82">
+              <span className="mt-3 block text-white/80">
                 While Others Stay Stuck Feeling Like They’re Missing Something
               </span>
             </h1>
@@ -30,7 +33,7 @@ export default function HeroHome() {
               The one realization that finally shows you how the market actually moves.
             </p>
 
-            <div className="mt-8 max-w-2xl space-y-4 text-base leading-8 text-white/72 sm:text-lg">
+            <div className="mt-8 max-w-3xl space-y-5 text-base leading-8 text-white/72 sm:text-lg">
               <p>
                 Have you ever had that moment where you stare at the chart and think…
               </p>
@@ -61,62 +64,93 @@ export default function HeroHome() {
                 How can you be right about direction… and still lose money?
               </p>
             </div>
-
-            <div className="mt-10">
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-cyan-300/80">
-                Keep reading
-              </p>
-              <div className="mt-3 h-px w-24 bg-gradient-to-r from-cyan-400 to-transparent" />
-            </div>
           </div>
 
-          <div className="md:col-span-5">
-            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-5 shadow-2xl backdrop-blur">
-              <div className="rounded-2xl border border-white/10 bg-slate-900/80 p-5">
-                <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.2em] text-white/50">
-                      Familiar pattern
-                    </p>
-                    <p className="mt-1 text-sm font-semibold text-white">
-                      Right idea. Wrong place. Same frustration.
-                    </p>
-                  </div>
-
-                  <div className="rounded-full border border-amber-400/20 bg-amber-400/10 px-3 py-1 text-xs font-semibold text-amber-200">
-                    Repeats
-                  </div>
+          {/* Problem amplification row */}
+          <div className="mt-14 grid items-stretch gap-8 lg:grid-cols-12">
+            {/* Frustration image */}
+            <div className="lg:col-span-7">
+              <div className="overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.04] shadow-2xl backdrop-blur">
+                <div className="relative aspect-[16/10] w-full">
+                  <Image
+                    src="/images/trader-reflection.png"
+                    alt="Trader reflecting late at night while looking at charts"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
                 </div>
 
-                <div className="mt-5 space-y-3">
-                  {[
-                    "Studies charts seriously",
-                    "Finds a setup that makes sense",
-                    "Enters with confidence",
-                    "Gets stopped out early",
-                    "Watches price move as expected",
-                  ].map((item, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center justify-between rounded-xl border border-white/8 bg-white/[0.03] px-4 py-3"
-                    >
-                      <span className="text-sm text-white/80">{item}</span>
-                      <span className="text-xs text-white/40">Again</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-5 rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-4">
-                  <p className="text-sm font-semibold text-cyan-200">
-                    This is the point where most traders start doubting themselves.
+                <div className="border-t border-white/10 px-5 py-4 md:px-6">
+                  <p className="text-sm uppercase tracking-[0.2em] text-cyan-300/75">
+                    The frustration most traders know well
                   </p>
-                  <p className="mt-2 text-sm leading-6 text-cyan-100/80">
-                    Not because they are lazy or incapable — but because something
-                    important about price movement has never been explained properly.
+                  <p className="mt-2 text-base leading-7 text-white/72">
+                    Long hours. Serious effort. Real intention. Yet the same
+                    confusing cycle keeps repeating — being right on direction,
+                    but still losing the trade before the move happens.
                   </p>
                 </div>
               </div>
             </div>
+
+            {/* Familiar pattern card */}
+            <div className="lg:col-span-5">
+              <div className="relative h-full overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-5 shadow-2xl backdrop-blur">
+                <div className="rounded-2xl border border-white/10 bg-slate-900/80 p-5">
+                  <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                    <div>
+                      <p className="text-xs uppercase tracking-[0.2em] text-white/50">
+                        Familiar pattern
+                      </p>
+                      <p className="mt-1 text-sm font-semibold text-white">
+                        Right idea. Wrong place. Same frustration.
+                      </p>
+                    </div>
+
+                    <div className="rounded-full border border-amber-400/20 bg-amber-400/10 px-3 py-1 text-xs font-semibold text-amber-200">
+                      Repeats
+                    </div>
+                  </div>
+
+                  <div className="mt-5 space-y-3">
+                    {[
+                      "Studies charts seriously",
+                      "Finds a setup that makes sense",
+                      "Enters with confidence",
+                      "Gets stopped out early",
+                      "Watches price move as expected",
+                    ].map((item, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center justify-between rounded-xl border border-white/8 bg-white/[0.03] px-4 py-3"
+                      >
+                        <span className="text-sm text-white/80">{item}</span>
+                        <span className="text-xs text-white/40">Again</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-5 rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-4">
+                    <p className="text-sm font-semibold text-cyan-200">
+                      This is the point where most traders start doubting themselves.
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-cyan-100/80">
+                      Not because they are lazy or incapable — but because something
+                      important about price movement has never been explained properly.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Keep reading */}
+          <div className="mt-12">
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-cyan-300/80">
+              Keep reading
+            </p>
+            <div className="mt-3 h-px w-24 bg-gradient-to-r from-cyan-400 to-transparent" />
           </div>
         </div>
       </div>
