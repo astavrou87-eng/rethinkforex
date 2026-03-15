@@ -396,7 +396,7 @@ export default function CourseSections() {
             <p className="text-lg leading-8 text-white/76">
               At that point, you are no longer just another trader trying to
               guess the next move. You become the trader who sees what others
-              miss — and that shift carries far beyond the charts.
+              miss — That you can succeed where most people quit. 
             </p>
           </div>
         </div>
