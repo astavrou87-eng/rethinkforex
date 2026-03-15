@@ -79,18 +79,17 @@ export default function HeroHome() {
                 />
               </div>
 
-              <div className="border-t border-white/10 px-5 py-4 md:px-6">
-                <p className="text-sm uppercase tracking-[0.2em] text-cyan-300/75">
-                  The frustration most traders know well
-                </p>
-                <p className="mt-2 text-base leading-7 text-white/72">
-                  Long hours. Serious effort. Real intention. Yet the same
-                  confusing cycle keeps repeating — being right on direction,
-                  but still losing the trade before the move happens.
-                </p>
-              </div>
-            </div>
-          </div>
+              <div className="border-t border-white/10 px-5 py-5 md:px-6">
+  <p className="text-base font-semibold uppercase tracking-[0.15em] text-cyan-300/80">
+    The frustration most traders know well
+  </p>
+
+  <p className="mt-3 text-base leading-7 text-white/80">
+    Long hours. Serious effort. Real intention. Yet the same confusing cycle
+    keeps repeating — being right on direction, but still losing the trade
+    before the move happens.
+  </p>
+</div>
 
           {/* Familiar pattern card below image */}
         <div className="mx-auto mt-10 max-w-5xl">
