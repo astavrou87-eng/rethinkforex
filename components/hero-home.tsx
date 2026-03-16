@@ -22,9 +22,9 @@ export default function HeroHome() {
             </div>
 
             <h1 className="mt-6 text-4xl font-extrabold leading-[1.02] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-              Why Some Traders Quietly Start Making Consistent Money…
+              The Moment Some Traders Finally Understand The Market…
               <span className="mt-3 block text-white/80">
-                While Others Stay Stuck Feeling Like They’re Missing Something
+                And Leave Everyone Else Behind
               </span>
             </h1>
 
