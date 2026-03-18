@@ -70,7 +70,7 @@ export default function HeroHome() {
             <div className="overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.04] shadow-2xl backdrop-blur">
               <div className="relative aspect-[16/10] w-full">
                 <Image
-                  src="/images/trader-reflection.png"
+                  src="/images/new-image.png"
                   alt="Trader reflecting late at night while looking at charts"
                   fill
                   className="object-cover"
