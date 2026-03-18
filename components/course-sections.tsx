@@ -264,6 +264,32 @@ export default function CourseSections() {
             </div>
           </div>
 
+          {/* MID-PAGE CTA */}
+          <div className="mx-auto mt-12 max-w-4xl rounded-[32px] border border-cyan-400/20 bg-cyan-400/10 p-8 text-center shadow-2xl backdrop-blur md:p-10">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-200/90">
+              If this explains what you’ve been missing
+            </p>
+
+            <h3 className="mt-4 text-2xl font-extrabold tracking-tight text-white md:text-4xl">
+              See The Full Liquidity Framework
+            </h3>
+
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-cyan-100/85 md:text-lg">
+              The full 48-page guide shows you how to identify these ideas on
+              your own chart so you stop entering where everyone else gets taken out.
+            </p>
+
+            <div className="mt-8">
+              <StripeCheckoutButton className="inline-flex items-center justify-center rounded-2xl bg-cyan-500 px-10 py-5 text-lg font-extrabold text-slate-950 shadow-lg shadow-cyan-500/20 transition hover:bg-cyan-400">
+                Secure Instant Access - £25
+              </StripeCheckoutButton>
+            </div>
+
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-cyan-100/70">
+              48-page PDF • Instant download after purchase
+            </p>
+          </div>
+
           <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-3">
             {[
               {
@@ -382,7 +408,7 @@ export default function CourseSections() {
             <div className="rounded-[28px] border border-cyan-400/20 bg-cyan-400/10 p-7">
               <p className="text-lg leading-8 text-cyan-100/88">
                 It’s the difference between trying to drive using only the rear-view mirror…
-and finally looking through the windshield.
+                and finally looking through the windshield.
               </p>
               <p className="mt-6 leading-8 text-cyan-100/82">
                 You stop chasing price. You start seeing where real moves begin.
@@ -396,7 +422,7 @@ and finally looking through the windshield.
             <p className="text-lg leading-8 text-white/76">
               At that point, you are no longer just another trader trying to
               guess the next move. You become the trader who sees what others
-              miss — That you can succeed where most people quit. 
+              miss — That you can succeed where most people quit.
             </p>
           </div>
         </div>
