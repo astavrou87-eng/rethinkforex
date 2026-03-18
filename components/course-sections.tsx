@@ -218,7 +218,7 @@ export default function CourseSections() {
 
             <div className="mt-8 rounded-3xl border border-cyan-400/20 bg-cyan-400/10 p-6 md:p-8">
               <p className="text-lg font-semibold text-white">
-                Think in opposites.
+                Think in opposites. See large green buy candles, THINK SELL! See large red sell candles, THINK BUY!
               </p>
               <p className="mt-3 leading-8 text-cyan-100/85">
                 For someone to buy, someone must be willing to sell. For
