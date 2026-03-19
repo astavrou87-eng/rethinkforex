@@ -251,9 +251,9 @@ export default function CourseSections() {
 
                 <div className="mt-4 flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
                   <p className="max-w-4xl text-base leading-8 text-white/70">
-                    Retail traders often cluster stops and entries around obvious
-                    levels. Institutions need liquidity to transact size, so price is
-                    often drawn into those areas before the real move expands.
+                    Above - Large institutions were aware of retail traders selling on the large red move down.  
+                    Anyone placing their take profit order further down fed liquidity to the banks as they bought everything they could and forced price up. 
+                    Anyone who placed a stop loss order behind their entry also fed banks liquidity. In order for a stop loss to get you out someone has to buy that position! 
                   </p>
 
                   <span className="shrink-0 rounded-full border border-white/10 bg-white/[0.05] px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-cyan-300/75">
