@@ -550,8 +550,8 @@ export default function CourseSections() {
             Start Seeing What Moves Price
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/75">
-            A 48-page market understanding guide that allows you to make
-            more pips per win to grow your account with less risk.
+            Grow your account with this 48-page market understanding guide.
+            Greater understanding means higher take profit expectations with less risk.
           </p>
 
           <div className="mt-10">
