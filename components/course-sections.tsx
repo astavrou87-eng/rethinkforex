@@ -205,15 +205,15 @@ export default function CourseSections() {
             </p>
 
             <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white md:text-5xl">
-              The market runs on liquidity
+              Any large trade worth trading is fueled by liquidity
             </h2>
 
             <div className="mt-8 space-y-5 text-lg leading-8 text-white/76">
               <p>Institutions must find liquidity to place large trades.</p>
-              <p>Retail traders unknowingly create that liquidity.</p>
-              <p>Price moves to those areas.</p>
-              <p>Professionals trade there.</p>
-              <p>Retail gets stopped out there.</p>
+              <p>Retail traders unknowingly create that liquidity by entering trades in predictable areas.</p>
+              <p>Institutions are able to encourage you to do so by moving price into these areas.</p>
+              <p>Professionals enter trades there and you should be copying what they do.</p>
+              <p>Start taking 200-400 pips per trade instead of 20.</p>
             </div>
 
             <div className="mt-8 rounded-3xl border border-cyan-400/20 bg-cyan-400/10 p-6 md:p-8">
@@ -275,8 +275,8 @@ export default function CourseSections() {
             </h3>
 
             <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-cyan-100/85 md:text-lg">
-              The full 48-page guide shows you how to identify these ideas on
-              your own chart so you stop entering where everyone else gets taken out.
+              When you understand how to trade like the large institutions you can trade with less risk.
+              To grow a small account you need higher pip value wins. 200-400+ pips per trade! Not 20-30. 
             </p>
 
             <div className="mt-8">
