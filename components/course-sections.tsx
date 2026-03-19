@@ -550,8 +550,8 @@ export default function CourseSections() {
             Start Seeing What Moves Price
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/75">
-            A 48-page market understanding guide that shows you how price
-            actually moves.
+            A 48-page market understanding guide that allows you to make
+            more pips per win to grow your account with less risk.
           </p>
 
           <div className="mt-10">
