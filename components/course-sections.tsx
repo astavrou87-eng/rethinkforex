@@ -251,9 +251,9 @@ export default function CourseSections() {
 
                 <div className="mt-4 flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
                   <p className="max-w-4xl text-base leading-8 text-white/70">
-                    Above - Large institutions were aware of retail traders selling on the large red move down.  
-                    Anyone placing their take profit order further down fed liquidity to the banks as they bought everything they could and forced price up. 
-                    Anyone who placed a stop loss order behind their entry also fed banks liquidity. In order for a stop loss to get you out someone has to buy that position! 
+                    Above - Large institutions were aware of retail traders selling on the large red move down.
+                    Anyone placing their take profit order further down fed liquidity to the banks as they bought everything they could and forced price up.
+                    Anyone who placed a stop loss order behind their entry also fed banks liquidity. In order for a stop loss to get you out someone has to buy that position!
                   </p>
 
                   <span className="shrink-0 rounded-full border border-white/10 bg-white/[0.05] px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-cyan-300/75">
@@ -425,6 +425,35 @@ export default function CourseSections() {
               miss — That you can succeed where most people quit.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* PROOF SECTION */}
+      <section className="border-b border-white/10 bg-slate-900/60">
+        <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 md:py-20 text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300/80">
+            Real outcome
+          </p>
+
+          <h2 className="mt-4 text-3xl font-extrabold text-white md:text-5xl">
+            What happens when you start seeing liquidity clearly
+          </h2>
+
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/75">
+            One trade. Over 400 pips. Not from guessing — from understanding where liquidity sits and how price moves toward it.
+          </p>
+
+          <div className="mt-10 overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.04] p-3 shadow-2xl backdrop-blur md:p-4">
+            <img
+              src="/images/proof.png"
+              alt="Forex trade example showing over 400 pips using liquidity understanding"
+              className="w-full h-auto rounded-2xl object-contain"
+            />
+          </div>
+
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-white/60">
+            This is not about predicting every move. It’s about understanding where price is likely drawn — and positioning accordingly.
+          </p>
         </div>
       </section>
 
