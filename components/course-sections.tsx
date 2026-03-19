@@ -491,7 +491,7 @@ export default function CourseSections() {
 
             <div className="mt-10 rounded-2xl border border-white/10 bg-slate-950/80 px-6 py-5">
               <p className="text-sm uppercase tracking-[0.2em] text-white/45">
-                Positioning line
+                The Truth
               </p>
               <p className="mt-2 text-lg font-semibold text-white">
                 Don’t spend the next five or ten years trying to figure this out
